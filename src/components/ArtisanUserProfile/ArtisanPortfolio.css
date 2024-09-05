@@ -1,0 +1,109 @@
+.artisanportfolio{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.artisanportfolio h1{
+    padding: 10px 20px;
+}
+
+
+.artisanportfolio .form{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.artisanportfolio .form .form-group{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    margin: 10px;
+}
+
+.artisanportfolio .form .form-group label{
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+
+.artisanportfolio .form .form-group input{
+    padding: 10px 20px;
+    border: 1px solid rgb(207, 207, 207);
+    border-radius: 5px;
+    outline: none;
+}
+
+.description {
+    margin-top: 1%;
+    height: 200px;
+    max-height: 100%;
+    padding: 5%;
+}
+
+.btn {
+    width: 300px;
+    max-width: 100%;
+    background-color: #5995fd;
+    border: none;
+    outline: none;
+    height: 45px;
+    border-radius: 40px;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    margin: 0.5rem 0;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #114fbb;
+  }
+
+  .error-message {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    left: 0;
+    color: #dc3545;
+    font-size: 0.875rem;
+    background: #f8d7da;
+    border-radius: 8px;
+    padding: 0.25rem 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    display: block;
+  }
+
+  @media (max-width: 550px){
+
+    .artisanportfolio .form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 10px 20px;
+    }
+
+    .artisanportfolio .form .form-group{
+        display: flex;
+        flex-direction: column;
+        width: 97%;
+        margin: 10px;
+    }
+
+    .artisanportfolio h1{
+        font-size: 20px;
+    }
+
+    .artisanportfolio .form .form-group label{
+        font-size: 16px;
+        font-weight: 300;
+        margin-bottom: 5px;
+    }
+}

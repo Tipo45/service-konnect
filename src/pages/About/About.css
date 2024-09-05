@@ -1,0 +1,61 @@
+.head {
+    padding: 2%;
+}
+
+.about-head {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.content {
+    padding: 2%;
+}
+
+.content p {
+    font-size: 0.9rem;
+}
+
+@media (min-width: 425px) {
+
+    .about-head {
+        font-size: 2.5rem;
+    }
+
+    .content p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 768px) {
+
+    .about-head {
+        font-size: 4rem;
+    }
+
+    .content p {
+        font-size: 1.9rem;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    .about-head {
+        font-size: 4.5rem;
+    }
+
+    .content p {
+        font-size: 2.0rem;
+    }
+}
+
+@media (min-width: 1440px) {
+
+    .about-head {
+        font-size: 6rem;
+    }
+
+    .content p {
+        font-size: 3.5rem;
+    }
+}
