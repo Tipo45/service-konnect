@@ -21,6 +21,11 @@ a {
   margin-bottom: 20px;
 }
 
+.skillandproductsidebar .column2 {
+  border-radius: 5px !important;
+  background: #e76262 !important;
+}
+
 .skillandproductsidebar .column1 h1,
 .skillandproductsidebar .column2 h1 {
   font-size: 0.7rem;

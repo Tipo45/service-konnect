@@ -38,6 +38,13 @@
     outline: none;
 }
 
+.displayed {
+    background: #dcd6d6;
+    text-align: center;
+    border-radius: 50px;
+    line-height: 2.2rem;
+    font-size: 1.3rem;
+}
 
   @media (max-width: 550px){
 

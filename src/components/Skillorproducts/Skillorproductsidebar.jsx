@@ -1,7 +1,8 @@
-import React from "react";
+
 import { Link } from "react-router-dom";
 import "../../components/Skillorproducts/Skillorproductsidebar.css";
 
+// eslint-disable-next-line react/prop-types
 const Skillorproductsidebar = ({ activepage }) => {
   return (
     <>

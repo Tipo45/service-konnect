@@ -1,12 +1,15 @@
-import React from "react";
+
 import "../ClientUserProfile/Usersidebar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { GrUserSettings } from "react-icons/gr";
 import { IoBagOutline, IoEyeOutline, IoPower } from "react-icons/io5";
 import { CiLocationOn } from "react-icons/ci";
 import { FaRegUser } from "react-icons/fa";
+import { logout } from "../../lib/pocketbase";
 
+// eslint-disable-next-line react/prop-types
 const UserSidebar = ({ activepage }) => {
+  const navigate = useNavigate();
   return (
     <div className="usersidebar">
       {activepage === "accountinformation" ? (
@@ -82,8 +85,9 @@ const UserSidebar = ({ activepage }) => {
       {
         
           <div className="s1">
+            <button onClick={() => {logout(),navigate("/login") }} className="text-dark btn">
             <IoPower className="text-danger" />
-            <span className="text-dark">Logout</span>
+              Logout</button>
           </div>
       }
     </div>

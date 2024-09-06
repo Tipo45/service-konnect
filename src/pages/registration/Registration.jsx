@@ -1,9 +1,8 @@
 import { useState } from "react";
-import React from "react";
 import { FaUserAlt, FaLock, FaArrowLeft } from "react-icons/fa";
 import { MdDriveFileRenameOutline } from "react-icons/md";
 import { Link, useNavigate, } from "react-router-dom";
-import {create_user, } from "../../lib/pocketbase"
+import {create_user } from "../../lib/pocketbase"
 import "../login/Login.css";
 
 const Regform = () => {
@@ -44,7 +43,7 @@ const Regform = () => {
               return 
             } else {
               if (password === "") {
-                setPasswordError("password is required");
+                setPasswordError("password required");
                 return 
               } else {
                 if (password.length < 8) {
@@ -58,13 +57,14 @@ const Regform = () => {
                   }
                   else{
                     try { 
-                     const result = await  create_user(username,password,confirmpassword,firstname,lastname)
+                     const result = await  create_user(firstname,lastname,username,password,confirmpassword)
                      finalresult = result
                     } catch (error) {
+                      console.log(error)
                       return
                     }
                     if(finalresult.record){
-                      navigate('/client/activepage');
+                      navigate("/client/accountinformation");
                     }
                   }
                 }

@@ -10,28 +10,39 @@ import SkillsorService from "./pages/SkillsorService/SkillsorService";
 import Artisan from "./pages/Auserside/Artisan";
 import Registrationartisan from "./pages/registration/Registrationartisan";
 import About from "./pages/About/About";
-import Cart from "./pages/Cart/Cart";
+// import Cart from "./pages/Cart/Cart";
 import NoPage from "./pages/Nopage";
-
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 function App() {
+  const queryClient = new QueryClient();
   return (
-    <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Homepage />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/productsandservices/:activepage" element={<SkillsorService />} />
-      <Route path="/clientregistration" element={<Regform />} />
-      <Route path="/artisanregistration" element={<Registrationartisan />} />
-      <Route path="/login" element={<Logform />} />
-      <Route path="/cart" element={<Cart />} />
-      <Route path="/admin/:activepage" element={<Admin />} />
-      <Route path="/client/:activepage" element={<Client />} /> 
-      <Route path="/artisan/:activepage" element={<Artisan />} />
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/about" element={<About />} />
+          <Route
+            path="/productsandservices/:activepage"
+            element={<SkillsorService />}
+          />
+          <Route path="/clientregistration" element={<Regform />} />
+          <Route
+            path="/artisanregistration"
+            element={<Registrationartisan />}
+          />
+          <Route path="/login" element={<Logform />} />
+          {/* <Route path="/cart" element={<Cart />} /> */}
+          <Route path="/admin/:activepage" element={<Admin />} />
+          <Route path="/client/:activepage" element={<Client />} />
+          <Route path="/artisan/:activepage" element={<Artisan />} />
 
-      <Route path="*" element={<NoPage />} />
-    </Routes>
-    </BrowserRouter>
+          <Route path="*" element={<NoPage />} />
+        </Routes>
+      </BrowserRouter>
+      <ReactQueryDevtools />
+    </QueryClientProvider>
   );
 }
 

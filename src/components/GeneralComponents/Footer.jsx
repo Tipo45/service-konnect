@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+
 import { Link } from "react-router-dom";
 import "../GeneralComponents/GeneralComponent.css";
 import { FaWhatsapp, FaTelegramPlane } from "react-icons/fa";
@@ -10,6 +10,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
 import { MdAddShoppingCart } from "react-icons/md";
+import { useState } from "react";
 
 const Footer = () => {
   const [value, setValue] = useState(0);
@@ -27,49 +28,49 @@ const Footer = () => {
           <div className="sub_footer-links">
             <div className="sub_footer-links-div">
               <h4>Connect</h4>
-              <Link className="nodeco" href="#">
+              <Link className="nodeco" to="#">
                 <p>Employer</p>
               </Link>
-              <Link className="nodeco" href="#">
+              <Link className="nodeco" to="#">
                 <p>Employer</p>
               </Link>
-              <Link className="nodeco" href="#">
+              <Link className="nodeco" to="#">
                 <p>Employer</p>
               </Link>
             </div>
             <div className="sub_footer-as-div">
               <h4>Connect</h4>
-              <Link className="nodeco" href="#">
+              <Link className="nodeco" to="#">
                 <p>Employer</p>
               </Link>
-              <Link className="nodeco" href="#">
+              <Link className="nodeco" to="#">
                 <p>Employer</p>
               </Link>
-              <Link className="nodeco" href="#">
+              <Link className="nodeco" to="#">
                 <p>Employer</p>
               </Link>
             </div>
             <div className="sub_footer-links-div">
               <h4>Connect</h4>
-              <Link className="nodeco" href="#">
+              <Link className="nodeco" to="#">
                 <p>Employer</p>
               </Link>
-              <Link className="nodeco" href="#">
+              <Link className="nodeco" to="#">
                 <p>Employer</p>
               </Link>
-              <Link className="nodeco" href="#">
+              <Link className="nodeco" to="#">
                 <p>Employer</p>
               </Link>
             </div>
             <div className="sub_footer-as-div">
               <h4>Connect</h4>
-              <Link className="nodeco" href="#">
+              <Link className="nodeco" to="#">
                 <p>Employer</p>
               </Link>
-              <Link className="nodeco" href="#">
+              <Link className="nodeco" to="#">
                 <p>Employer</p>
               </Link>
-              <Link className="nodeco" href="#">
+              <Link className="nodeco" to="#">
                 <p>Employer</p>
               </Link>
             </div>
@@ -109,17 +110,17 @@ const Footer = () => {
               </p>
             </div>
             <div className="sub_footer-below-links">
-              <Link className="nodeco" href="#">
+              <Link className="nodeco" to="#">
                 <div>
                   <p>Terms & Conditions</p>
                 </div>
               </Link>
-              <Link className="nodeco" href="#">
+              <Link className="nodeco" to="#">
                 <div>
                   <p>Security</p>
                 </div>
               </Link>
-              <Link className="nodeco" href="#">
+              <Link className="nodeco" to="#">
                 <div>
                   <p>Privacy</p>
                 </div>
@@ -142,7 +143,7 @@ const Footer = () => {
             <Link to="/">
               <BottomNavigationAction label="Home" icon={<HomeIcon />} />
             </Link>
-            <Link to="/productsandservices/activepage">
+            <Link to="/productsandservices/tailors">
               <BottomNavigationAction
                 label="Menu"
                 icon={<FormatListBulletedIcon />}
