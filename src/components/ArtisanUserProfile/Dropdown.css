@@ -1,0 +1,104 @@
+.dropdown {
+    width: 300px;
+    user-select: none;
+}
+
+.dropdown .dropdown-btn {
+    padding: 15px 20px;
+    background: #fff;
+    box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.06);
+    font-weight: 500;
+    color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 0.8rem;
+}
+
+.dropdown .dropdown-btn svg {
+    font-size: 0.8rem;
+}
+
+.dropdown .dropdown-content {
+    position: absolute;
+    top: 110%;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.06);
+    color: grey;
+    width: 60%;
+    border-radius: 10px;
+    font-size: 0.7rem;
+}
+
+.dropdown .dropdown-content .dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.dropdown .dropdown-content .dropdown-item:hover {
+    background: #f4f4f4;
+}
+
+@media (min-width: 425px) {
+    .dropdown .dropdown-btn {
+        font-size: 1.1rem;
+    }
+
+    .dropdown .dropdown-btn svg {
+        font-size: 1.1rem;
+    }
+
+    .dropdown .dropdown-content {
+        font-size: 0.8rem;
+        width: 70%;
+    }
+}
+
+@media (min-width: 768px) {
+    .dropdown .dropdown-btn {
+        font-size: 1.5rem;
+    }
+
+    .dropdown .dropdown-btn svg {
+        font-size: 1.5rem;
+    }
+
+    .dropdown .dropdown-content {
+        font-size: 1.1rem;
+        width: 90%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .dropdown .dropdown-btn {
+        font-size: 1.6rem;
+    }
+
+    .dropdown .dropdown-btn svg {
+        font-size: 1.6rem;
+    }
+
+    .dropdown .dropdown-content {
+        font-size: 1.2rem;
+        width: 100%;
+    }
+}
+
+@media (min-width: 1140px) {
+    .dropdown .dropdown-btn {
+        font-size: 1.7rem;
+    }
+
+    .dropdown .dropdown-btn svg {
+        font-size: 1.7rem;
+    }
+
+    .dropdown .dropdown-content {
+        font-size: 1.5rem;
+        width: 120%;
+    }
+}

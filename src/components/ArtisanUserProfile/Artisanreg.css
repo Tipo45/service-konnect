@@ -15,7 +15,7 @@
   transform: scale(1.01) translateY(-2px);
 }
 
-.container {
+.containers {
   background: #aac8fc;
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
@@ -127,8 +127,8 @@
 }
 
 .artisan-names input {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .error-message {
@@ -144,76 +144,138 @@
   display: block;
 }
 
-/* media queries */
+.artisan-description,
+.artisan-address,
+.artisan-image,
+.artisan-number,
+.socials,
+.artisan-whatsapp,
+.artisan-insta-handle {
+  margin-top: 20px;
+}
 
-@media (max-width: 768px) {
-  .container {
-    padding: 20px 25px;
+.artisan-description label,
+.artisan-address label,
+.artisan-image label,
+.artisan-number label,
+.artisan-whatsapp label,
+.artisan-insta-handle label {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.artisan-description textarea {
+  padding: 2% 3%;
+  width: 280px;
+  height: 150px;
+  border-radius: 10px;
+}
+
+.artisan-address input,
+ .artisan-number input,
+ .artisan-whatsapp input,
+ .artisan-insta-handle input {
+  padding: 2% 3%;
+  width: 270px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.artisan-image p {
+  font-size: 1.1rem;
+}
+
+.artisan-image p span {
+  font-weight: 600;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 50px;
+  margin-top: 20px;
+}
+
+.buttons button {
+  width: 100px;
+  background: #5995fd;
+  color: #f4f4f4;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  height: 50px;
+}
+
+.buttons button:hover {
+  background: #114fbb;
+}
+
+@media (min-width: 768px) {
+  .artisan-description,
+  .artisan-address,
+  .artisan-image,
+  .artisan-number,
+  .socials,
+  .artisan-whatsapp,
+  .artisan-insta-handle {
+    margin-top: 30px;
   }
 
-  .container h1 {
-    font-size: 1.75rem;
+  .buttons {
+    margin-top: 30px;
+    gap: 70px;
   }
 
-  .input_box {
-    margin: 1rem 0;
-  }
-
-  .input_box input {
-    padding: 0.75rem 2rem;
-  }
-
-  .input_box .icon {
-    right: 0.75rem;
-    font-size: 1.1rem;
-  }
-
-  .container .forgot-pass {
-    font-size: 0.8rem;
-  }
-
-  .container .register-link {
-    font-size: 0.8rem;
+  .buttons button {
+    font-size: 1.5rem;
+    width: 150px;
+    height: 60px;
   }
 }
 
-@media (max-width: 480px) {
-  .container {
-    padding: 15px 20px;
+@media (min-width: 1024px) {
+  .artisan-description label,
+  .artisan-address label,
+  .artisan-image label,
+  .artisan-number label,
+  .artisan-whatsapp label,
+  .artisan-insta-handle label {
+    font-size: 1.8rem;
+    font-weight: 600;
   }
 
-  .container h1 {
+  .artisan-description textarea {
+    padding: 2% 3%;
+    width: 350px;
+    height: 200px;
+    border-radius: 10px;
+  }
+
+  .artisan-address input,
+   .artisan-number input,
+  .artisan-whatsapp input,
+  .artisan-insta-handle input {
+    padding: 2% 3%;
+    width: 350px;
+    height: 50px;
+    border-radius: 10px;
+  }
+
+  .artisan-image p {
+    font-size: 1.4rem;
+  }
+
+  .artisan-image p span {
+    font-weight: 600;
+  }
+
+  .socials p {
     font-size: 1.5rem;
   }
 
-  .input_box {
-    margin: 0.75rem 0;
-  }
-
-  .input_box input {
-    padding: 0.75rem 1.5rem;
-  }
-
-  .input_box .icon {
-    right: 0.5rem;
-    font-size: 1rem;
-  }
-
-  .container .forgot-pass {
-    font-size: 0.75rem;
-  }
-
-  .container .register-link {
-    font-size: 0.75rem;
-  }
-}
-
-@media (max-width: 320px) {
-  .container h1 {
-    font-size: 1.25rem;
-  }
-
-  .input_box input {
-    padding: 0.75rem 1rem;
+  .buttons {
+    margin-top: 30px;
+    gap: 100px;
   }
 }

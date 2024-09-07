@@ -13,13 +13,13 @@ header {
   padding: 2rem 0;
 }
 
-.container nav {
+.container-sm nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.container ul li a {
+.container-sm ul li a {
   color: #212a3c;
   font-size: 1rem;
   padding: 0.7rem 1rem;
@@ -27,15 +27,15 @@ header {
   border-radius: 5px;
 }
 
-.container ul li a:hover {
+.container-sm ul li a:hover {
   background: #ecf0f1;
 }
 
-.container nav .logo h2 {
+.container-sm nav .logo h2 {
   font-size: 1.2rem;
 }
 
-.container .nav-link li {
+.container-sm .nav-link li {
   margin: 0.5rem 0.3rem;
 }
 
@@ -48,7 +48,7 @@ header {
   font-size: 1.4rem;
 }
 
-.container .nav-link {
+.container-sm .nav-link {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -100,11 +100,11 @@ header {
 
 @media (min-width: 375px) {
 
-  .container .nav-link {
+  .container-sm .nav-link {
     left: 800px;
   }
 
-  .container .nav-link.active {
+  .container-sm .nav-link.active {
     left: 40%;
   }
 
@@ -115,11 +115,11 @@ header {
 
 @media (min-width: 425px) {
 
-  .container .nav-link {
+  .container-sm .nav-link {
     left: 1000px;
   }
 
-  .container .nav-link.active {
+  .container-sm .nav-link.active {
     left: 45%;
   }
 
@@ -133,12 +133,12 @@ header {
     font-size: 1.5rem;
   }
 
-  .container .nav-link {
+  .container-sm .nav-link {
     width: 300px;
     left: 900px;  
   }
 
-  .container .nav-link.active {
+  .container-sm .nav-link.active {
     left: 60%;
   }
 
@@ -168,30 +168,30 @@ header {
     font-size: 2rem;
   }
 
-  .container {
+  .container-sm {
     padding-left: 0;
     padding-right: 0;
   }
 
-  .container nav .logo h2 {
+  .container-sm nav .logo h2 {
     font-size: 1.5rem;
   }
 
-  .container nav ul li a {
+  .container-sm nav ul li a {
     font-size: 1.6rem;
   }
 
-  .container .nav-link {
+  .container-sm .nav-link {
     top: 100px;
     width: 350px;
     left: 900px;
   }
 
-  .container .nav-link.active {
+  .container-sm .nav-link.active {
     left: 62%;
   }
 
-  .container .nav-link li {
+  .container-sm .nav-link li {
     margin: 0.5rem 0.3rem;
   }
 
@@ -219,7 +219,7 @@ header {
     padding: 2rem 0;
   }
 
-  .container {
+  .container-sm {
     max-width: 100%;
     margin: 0 auto;
     padding: 0 1rem;
@@ -229,21 +229,21 @@ header {
     font-size: 2rem !important;
   }
 
-  .container nav {
+  .container-sm nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
-  .container nav .logo h2 {
+  .container-sm nav .logo h2 {
     font-size: 2rem;
   }
 
-  .container .side .nav-link {
+  .container-sm .side .nav-link {
     display: flex;
   }
 
-  .container .nav-link {
+  .container-sm .nav-link {
     flex-direction: row;
     justify-content: flex-start;
     background: transparent;
@@ -397,7 +397,7 @@ header {
 }
 
 @media (min-width: 1440px) {
-  .container .nav-link {
+  .container-sm .nav-link {
     flex-direction: row;
     justify-content: flex-start;
     background: transparent;

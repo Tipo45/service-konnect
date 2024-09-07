@@ -70,7 +70,7 @@ const tothenext = async(e) => {
         </span>
       </div>
       <div className="container">
-        <h1>Personal Information</h1>
+        <h2>Personal Information</h2>
 
         <div className="artisan-names">
           <div className="input_box">

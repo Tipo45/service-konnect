@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../GeneralComponents/GeneralComponent.css";
 import { FaBars } from "react-icons/fa6";
@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <>
       <header>
-        <div className="container">
+        <div className="container-sm">
           <nav>
             <div className="logo">
               <Link className="nodeco" to="/">
@@ -34,8 +34,8 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link className="nodeco" to="/productsandservices/activepage">
-                  Products/Services
+                <Link className="nodeco" to="/productsandservices/tailors">
+                  Skill
                 </Link>
               </li>
               <li>
