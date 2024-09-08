@@ -1,15 +1,37 @@
-.contain {
-    background: #aac8fc;
-    border: 2px solid rgba(255, 255, 255, .2);
-    border-radius: 10px;
-    padding: 20% 12%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.directions {
+  padding: 16px 2%;
 }
 
-/* .contain h1{
-    font-size: 2.25rem;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 1.25rem;
-  } */
-  
+.directions span {
+  color: black !important;
+  cursor: pointer;
+}
+
+.directions span svg {
+  color: #000;
+}
+
+.directions span svg:hover {
+  transform: scale(1.01) translateY(-2px);
+}
+
+.wrappers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 420px;
+  background: #aac8fc;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 30px 40px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.wrappers h1 {
+  font-size: 2.25rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1.25rem;
+}

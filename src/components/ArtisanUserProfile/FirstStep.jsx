@@ -62,13 +62,6 @@ const tothenext = async(e) => {
 
   return (
     <>
-      <div className="directions">
-        <span>
-          <Link to="/clientregistration">
-            <FaArrowLeft />
-          </Link>
-        </span>
-      </div>
       <div className="container">
         <h2>Personal Information</h2>
 

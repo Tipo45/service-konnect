@@ -8,8 +8,6 @@ import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import HomeIcon from "@mui/icons-material/Home";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
-import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout";
-import { MdAddShoppingCart } from "react-icons/md";
 import { useState } from "react";
 
 const Footer = () => {
@@ -17,11 +15,7 @@ const Footer = () => {
 
   return (
     <div className="footer">
-      <div className="big-footer-cart">
-        <Link to="/cart">
-          <MdAddShoppingCart />
-        </Link>
-      </div>
+      
 
       <div className="big_footer">
         <div className="sub_footer section_padding">
@@ -147,12 +141,6 @@ const Footer = () => {
               <BottomNavigationAction
                 label="Menu"
                 icon={<FormatListBulletedIcon />}
-              />
-            </Link>
-            <Link to="/cart">
-              <BottomNavigationAction
-                label="Cart"
-                icon={<ShoppingCartCheckoutIcon />}
               />
             </Link>
             <Link to="/login">

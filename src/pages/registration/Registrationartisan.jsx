@@ -1,18 +1,25 @@
 // import FirstStep from "../../components/ArtisanUserProfile/FirstStep";
-import SecondStep from "../../components/ArtisanUserProfile/SecondStep";
-import ThirdStep from "../../components/ArtisanUserProfile/ThirdStep";
+// import SecondStep from "../../components/ArtisanUserProfile/SecondStep";
+// import ThirdStep from "../../components/ArtisanUserProfile/ThirdStep";
+import { FaArrowLeft } from "react-icons/fa";
 import "../../pages/registration/Registrationartisan.css";
+import { Link } from "react-router-dom";
+import Multistep from "../../components/Mulitstep/Multistep";
 
 const Registrationartisan = () => {
+
+
   return (
     <>
-      <div className="contain">
-      <h1>Artisan Registration</h1>
-      
-      <div><SecondStep /></div>
-      {/* <div><ThirdStep /></div> */}
-      
-        {/* <FirstStep /> */}
+    <div className="directions">
+        <span>
+          <Link to="/clientregistration">
+            <FaArrowLeft />
+          </Link>
+        </span>
+      </div>
+      <div className="wrappers">
+        <Multistep />
       </div>
     </>
   );
