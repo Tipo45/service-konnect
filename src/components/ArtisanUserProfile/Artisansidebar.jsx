@@ -1,4 +1,3 @@
-import React from "react";
 import "../../components/ArtisanUserProfile/Artisansidebar.css";
 import { Link } from "react-router-dom";
 import { GrUserSettings } from "react-icons/gr";

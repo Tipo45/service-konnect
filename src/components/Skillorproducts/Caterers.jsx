@@ -1,4 +1,3 @@
-import React from "react";
 import "../../components/Skillorproducts/Art.css";
 import { FaRegStar } from "react-icons/fa";
 
@@ -8,7 +7,7 @@ const Caterers = () => {
       <div className="arts">
         <h2>Caterers</h2>
         <div>
-          <section classNameName="container">
+          <section className="container">
             <div className="arts-content">
               <div className="art-category">
                 <img

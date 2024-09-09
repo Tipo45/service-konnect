@@ -1,6 +1,3 @@
-// import FirstStep from "../../components/ArtisanUserProfile/FirstStep";
-// import SecondStep from "../../components/ArtisanUserProfile/SecondStep";
-// import ThirdStep from "../../components/ArtisanUserProfile/ThirdStep";
 import { FaArrowLeft } from "react-icons/fa";
 import "../../pages/registration/Registrationartisan.css";
 import { Link } from "react-router-dom";

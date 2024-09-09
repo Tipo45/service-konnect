@@ -1,4 +1,3 @@
-import React from "react";
 import { useParams } from "react-router";
 import Footer from "../../components/GeneralComponents/Footer";
 import Navbar from "../../components/GeneralComponents/Navbar";

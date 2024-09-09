@@ -1,5 +1,4 @@
 import "../Cuserside/Client.css";
-import React from 'react'
 import Navbar from "../../components/GeneralComponents/Navbar";
 import Footer from "../../components/GeneralComponents/Footer";
 import { useParams } from "react-router";

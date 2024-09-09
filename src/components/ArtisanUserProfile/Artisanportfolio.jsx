@@ -1,56 +1,7 @@
-import React from 'react';
 import "../../components/ArtisanUserProfile/ArtisanPortfolio.css";
 
 const Artisanportfolio = () => {
 
-    // const [nameofbusiness, setNameofbusiness] = useState('');
-    // const [businesslocation, setBusinesslocation] = useState('');
-    // const [mobile, setMobile] = useState('');
-    // const [errors, setErrors] = useState({ nameofbusiness: '', businesslocation: '', mobile: '' });
-
-    // const validateSetting = () => {
-    //     let valid = true;
-    //     let errors = { nameofbusiness: '', businesslocation: '', mobile: '' };
-
-    //     if (nameofbusiness.length === 0) {
-    //         errors.firstname = 'Business name is required.';
-    //         valid = false;
-    //     } else if (nameofbusiness.length > 0 && nameofbusiness.length < 3) {
-    //         errors.nameofbusiness = 'Business name must be at least 3 characters.';
-    //         valid = false;
-    //     }
-
-    //     if (businesslocation.length === 0) {
-    //         errors.businesslocation = 'Location is required.';
-    //         valid = false;
-    //     }
-
-    //     if (mobile.length === 0) {
-    //         errors.mobile = 'Mobile is required.';
-    //         valid = false;
-    //     } else if (mobile.length > 0 && mobile.length < 10) {
-    //         errors.mobile = 'Mobile must be at least 11 characters.';
-    //         valid = false;
-    //     }
-        
-
-    //     if (valid) {
-    //         setErrors({ nameofbusiness: '', businesslocation: '', mobile: '' });
-    //     } else {
-    //         setErrors(errors);
-    //     }
-
-    //     return valid;
-    // };
-
-    // const handleSubmitt = (q) => {
-    //     q.preventDefault();
-    //     if (validateSetting()) {
-    //         // Perform the actual form submission, e.g., API call
-    //         console.log('Changes made with:', { nameofbusiness, businesslocation, mobile });
-    //         // Here you might handle success/failure responses from an API call
-    //     }
-    // };
 
     return (
         <>

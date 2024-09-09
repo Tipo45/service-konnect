@@ -3,7 +3,7 @@ import { FaUserAlt, FaLock, FaArrowLeft } from "react-icons/fa";
 import { MdDriveFileRenameOutline } from "react-icons/md";
 import { Link, useNavigate, } from "react-router-dom";
 import {create_user } from "../../lib/pocketbase"
-import "../login/Login.css";
+import "../../pages/registration/Registration.css";
 
 const Regform = () => {
   const [firstname, setFirstname] = useState("");
@@ -89,31 +89,31 @@ const Regform = () => {
         <form onSubmit={(e) => handleSubmit(e)} >
           <h1>Client Registration</h1>
 
-          <div className="names">
-            <div className="input-box">
+          <div className="c-names">
+            <div className="c-input-box">
               <MdDriveFileRenameOutline className="icon" />
               <input
                 value={firstname}
                 onChange={(e) => setFirstname(e.target.value)}
                 type="text"
-                placeholder="Firstname"
+                placeholder="Firstname" className="c-names-input"
               />
               { firstnameError.length === 0 ? null :  <div className="error-message">{firstnameError}</div>}
             </div>
 
-            <div className="input-box">
+            <div className="c-input-box">
               <MdDriveFileRenameOutline className="icon" />
               <input
                 value={lastname}
                 onChange={(e) => setLastname(e.target.value)}
                 type="text"
-                placeholder="Lastname"
+                placeholder="Lastname" className="c-names-input"
               />
             { lastnameError.length === 0 ? null :  <div className="error-message">{lastnameError}</div>}
             </div>
           </div>
 
-          <div className="input-box">
+          <div className="c-input-box">
             <FaUserAlt className="icon" />
             <input
               value={username}
@@ -125,7 +125,7 @@ const Regform = () => {
             { usernameError.length === 0 ? null :  <div className="error-message">{usernameError}</div>}
           </div>
 
-          <div className="input-box">
+          <div className="c-input-box">
             <FaLock className="icon" />
             <input
               value={password}
@@ -137,7 +137,7 @@ const Regform = () => {
             { passwordError.length === 0 ? null :  <div className="error-message">{passwordError}</div>}
           </div>
 
-          <div className="input-box">
+          <div className="c-input-box">
             <FaLock className="icon" />
             <input
               value={confirmpassword}

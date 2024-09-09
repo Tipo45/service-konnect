@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import "../GeneralComponents/GeneralComponent.css";
 import { FaWhatsapp, FaTelegramPlane } from "react-icons/fa";

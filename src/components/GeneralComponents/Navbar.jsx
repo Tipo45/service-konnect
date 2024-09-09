@@ -35,7 +35,7 @@ const Navbar = () => {
               </li>
               <li>
                 <Link className="nodeco" to="/productsandservices/tailors">
-                  Skill
+                  Skills
                 </Link>
               </li>
               <li>

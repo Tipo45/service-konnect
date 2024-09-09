@@ -1,4 +1,3 @@
-import React from "react";
 import "../../components/ArtisanUserProfile/Artisanaccinfo.css";
 
 const Artisanaccinfo = () => {
