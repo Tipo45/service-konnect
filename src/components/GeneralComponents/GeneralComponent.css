@@ -8,7 +8,7 @@ header {
   top: 0px;
   position: sticky;
   z-index: 99;
-  background: #aac8fc;
+  background: #1A237E;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   padding: 2rem 0;
 }
@@ -20,7 +20,7 @@ header {
 }
 
 .container-sm ul li a {
-  color: #212a3c;
+  color: #212a3c !important;
   font-size: 1rem;
   padding: 0.7rem 1rem;
   display: block;
@@ -28,11 +28,12 @@ header {
 }
 
 .container-sm ul li a:hover {
-  background: #ecf0f1;
+  background: #009688;
 }
 
 .container-sm nav .logo h2 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  color: #FAFAFA;
 }
 
 .container-sm .nav-link li {
@@ -45,6 +46,7 @@ header {
 }
 
 .icon svg {
+  color: #FAFAFA;
   font-size: 1.4rem;
 }
 
@@ -52,7 +54,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background: red;
+  background: #f7f6f6;
   position: fixed;
   width: 60%;
   height: 100%;
@@ -74,10 +76,6 @@ header {
 
 .social-links a {
   padding: 5%;
-}
-
-.big-footer-cart {
-  display: none;
 }
 
 .big_footer {
@@ -214,7 +212,7 @@ header {
 
 @media (min-width: 1024px) {
   header {
-    background: #aac8fc;
+    background: #1A237E;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     padding: 2rem 0;
   }
@@ -258,8 +256,11 @@ header {
     margin: 0 0.5rem;
   }
 
-  .nav-link ul li a {
-    color: #212a3c;
+  .container-sm ul li a {
+    color: #f4f4f4 !important;
+  }
+
+ .container-sm .nav-link ul li a {
     font-size: 1.1rem;
     padding: 0.7rem 1rem;
     display: block;
@@ -267,7 +268,7 @@ header {
   }
 
   .nav-link ul li a:hover {
-    background: #ecf0f1;
+    background: #009688;
   }
 
   .social-links {
@@ -278,28 +279,9 @@ header {
     display: none;
   }
 
-  .big-footer-cart {
-    display: block;
-    background: #e60505;
-    position: fixed;
-    bottom: 16px;
-    right: 32px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-  }
-  
-  .big-footer-cart svg {
-    color: #f4f4f4;
-  }
-
   /* footer */
   .big_footer {
-    background: #aac8fc;
+    background: #1A237E;
     padding: 10%;
     display: block;
   }
@@ -326,11 +308,10 @@ header {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    color: #f4f4f4;
+    color: #FAFAFA;
   }
 
   .nodeco {
-    color: #f5c5c5;
     text-decoration: none;
   }
 
@@ -355,6 +336,7 @@ header {
 
   .socialmedia p svg {
     font-size: 20px;
+    color: #009688;
   }
 
   .sub_footer-below {
@@ -380,7 +362,7 @@ header {
   }
 
   hr {
-    color: #f4f4f4;
+    color: #FAFAFA !important;
     width: 100%;
   }
 

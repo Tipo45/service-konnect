@@ -19,7 +19,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     background: #aac8fc;
     border: 2px solid rgba(255, 255, 255, .2);
     border-radius: 10px;
@@ -39,12 +40,11 @@
     position: relative;
     width: 100%;
     height: 30px;
-    margin: 2.2rem 0;
+    margin: 3.5rem 0 !important;
   }
   
   .input-box input{
-    width: 220px;
-
+    width: 100%;
     background: #f4f4f4;
     border: none;
     border: 2px solid rgba(255, 255, 255, .2);
@@ -148,7 +148,7 @@
  @media (min-width: 768px) {
 
 .wrapper {
-    padding: 60px 80px;
+    padding: 20px 20px !important;
 }
                       
  .wrapper h1 {
@@ -156,11 +156,10 @@
 }
                       
 .input-box {
-    margin: 1rem 0;
+    margin: 3rem 0 !important;
 }
                       
 .input-box input {
-  width: 300px;
     padding: 0.75rem 2rem;
 }
                       
@@ -181,20 +180,18 @@
 @media (min-width: 1024px) {
 
 .wrapper {
-  
-  padding: 80px 150px !important;
+  padding: 40px 10px !important;
 }
                       
 .wrapper h1 {
-    font-size: 1.5rem;
+    font-size: 2rem !important;
 }
                       
 .input-box {
-    margin: 0.75rem 0;
+    margin: 2.7rem 0 !important;
 }
                       
 .input-box input {
-  width: 270px;
     padding: 0.75rem 1.5rem;
 }
                       
@@ -213,8 +210,13 @@
                       
 @media (min-width: 1440px) {
 
+  .wrapper {
+    width: 400px !important;
+    padding: 40px 0 !important;
+  }
+
 .wrapper h1 {
-    font-size: 1.9rem; 
+    font-size: 2.1rem !important; 
 }
                       
 .input-box input {

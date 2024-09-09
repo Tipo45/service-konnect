@@ -15,11 +15,12 @@
   transform: scale(1.01) translateY(-2px);
 }
 
-.wrapper {
+.wrap {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   background: #aac8fc;
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
@@ -28,14 +29,14 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.wrapper h1 {
+.wrap h1 {
   font-size: 2.25rem;
   font-weight: 600;
   text-align: center;
   margin-bottom: 1.25rem;
 }
 
-.wrapper .c-input-box {
+.wrap .c-input-box {
   position: relative;
   width: 100%;
   height: 30px;
@@ -48,7 +49,7 @@
   border: none;
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 40px;
-  font-size: 1rem;
+  font-size: 0.8rem;
   padding: 0.75rem 2.5rem;
 }
 
@@ -60,7 +61,7 @@
   font-size: 1.25rem;
 }
 
-.wrapper .forgot-pass {
+.wrap .forgot-pass {
   display: flex;
   justify-content: flex-end;
   font-size: 0.9rem;
@@ -76,7 +77,7 @@
   text-decoration: underline;
 }
 
-.wrapper .register-link {
+.wrap .register-link {
   font-size: 0.9rem;
   text-align: center;
   margin: 1.25rem 0 1rem;
@@ -129,8 +130,8 @@
 }
 
 .c-names-input {
-    width: 120px !important;
-    padding: 0.7rem 0.6rem !important;
+  width: 120px !important;
+  padding: 0.7rem 0.6rem !important;
 }
 
 .error-message {
@@ -149,11 +150,12 @@
 /* media queries */
 
 @media (min-width: 768px) {
-  .wrapper {
-    padding: 60px 80px;
+  .wrap {
+    padding: 60px 10px;
+    max-width: 350px;
   }
 
-  .wrapper h1 {
+  .wrap h1 {
     font-size: 2rem;
   }
 
@@ -163,29 +165,37 @@
 
   .c-input-box input {
     width: 300px;
+    font-size: 1rem;
     padding: 0.75rem 2rem;
   }
 
+  .c-names-input {
+    width: 140px !important;
+    font-size: 0.9rem !important;
+    padding: 0.7rem 0.6rem !important;
+  }
+
   .c-input-box .icon {
-    right: 0.75rem;
+    right: 0.9rem;
+    top: 80%;
     font-size: 1.1rem;
   }
 
-  .wrapper .forgot-pass {
+  .wrap .forgot-pass {
     font-size: 1rem;
   }
 
-  .wrapper .register-link {
+  .wrap .register-link {
     font-size: 0.9rem;
   }
 }
 
 @media (min-width: 1024px) {
-  .wrapper {
+  .wrap {
     padding: 80px 90px;
   }
 
-  .wrapper h1 {
+  .wrap h1 {
     font-size: 1.5rem;
   }
 
@@ -194,25 +204,32 @@
   }
 
   .c-input-box input {
-    width: 270px;
+    width: 300px;
     padding: 0.75rem 1.5rem;
   }
 
+  .c-names-input {
+    width: 140px !important;
+    padding: 0.7rem 0.6rem !important;
+  }
+
   .c-input-box .icon {
+    right: 1rem !important;
+    top: 90%;
+    font-size: 1.25rem;
+  }
+
+  .wrap .forgot-pass {
     font-size: 1rem;
   }
 
-  .wrapper .forgot-pass {
-    font-size: 1rem;
-  }
-
-  .wrapper .register-link {
+  .wrap .register-link {
     font-size: 0.9rem;
   }
 }
 
 @media (min-width: 1440px) {
-  .wrapper h1 {
+  .wrap h1 {
     font-size: 1.9rem;
   }
 

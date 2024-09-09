@@ -15,7 +15,7 @@ const Registrationartisan = () => {
           </Link>
         </span>
       </div>
-      <div className="wrappers">
+      <div className="wrapp">
         <Multistep />
       </div>
     </>

@@ -4,8 +4,9 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import Dropdown from "../../components/ArtisanUserProfile/Dropdown";
 import { FaLock, FaUserAlt } from "react-icons/fa";
 import { MdDriveFileRenameOutline } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../../components/ArtisanUserProfile/Artisanreg.css";
+import { create_artisan } from "../../lib/pocketbase";
 
 export default function Multi() {
   const [selected, setSelected] = useState("");
@@ -20,8 +21,25 @@ export default function Multi() {
   const [usernameError, setUsernameError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [confirmPasswordError, setConfirmPasswordError] = useState("");
+  const [description, setDesription] = useState("");
+  const [address, setAddress] = useState("");
+  const [descriptionError, setDescriptionError] = useState("");
+  const [addressError, setAddressError] = useState("");
+  const [phonenumber, setPhoneNumber] = useState("");
+  const [phonenumberError, setPhoneNumberError] = useState("");
+  const [additionalphonenumber, setAdditionalPhoneNumber] = useState("");
+  const [additionalphonenumberError, setAdditionalPhoneNumberError] =
+    useState("");
+  const [whatsappnumber, setWhatsappNumber] = useState("");
+  const [instahandle, setInstaHandle] = useState("");
+  const [whatsappnumberError, setWhatsappNumberError] = useState("");
+  const [instahandleError, setInstaHandleError] = useState("");
+  const [nameofartisan, setNameOfArtisan] = useState("");
+  const [nameofartisanError, setNameOfArtisanError] = useState("");
+  const navigate = useNavigate();
 
-  const toTheNext = async (e) => {
+  const handleNext = async (e) => {
+    let final_result;
     e.preventDefault();
     if (firstname === "") {
       setFirstnameError("firstname required");
@@ -55,6 +73,103 @@ export default function Multi() {
                     setPasswordError("password do not match");
                     setConfirmPasswordError("password do not match");
                     return;
+                  } else {
+                    setSteps(2);
+                    if (step === 2) {
+                      if (description === "") {
+                        setDescriptionError("required");
+                        return;
+                      } else {
+                        if (description.length < 20) {
+                          setDescriptionError("too short");
+                          return;
+                        } else {
+                          if (address === "") {
+                            setAddressError("required");
+                            return;
+                          } else {
+                            if (address.length < 22) {
+                              setAddressError("too short");
+                              return;
+                            } else {
+                              setSteps(3);
+                              if (step === 3) {
+                                if (phonenumber === "") {
+                                  setPhoneNumberError("required");
+                                  return;
+                                } else {
+                                  if (phonenumber.length < 11) {
+                                    setPhoneNumberError("too short");
+                                    return;
+                                  } else {
+                                    if (
+                                      additionalphonenumber.length > 1 &&
+                                      additionalphonenumber.length < 11
+                                    ) {
+                                      setAdditionalPhoneNumberError(
+                                        "too short"
+                                      );
+                                      return;
+                                    } else {
+                                      if (
+                                        nameofartisan.length > 1 &&
+                                        nameofartisan.length > 4
+                                      ) {
+                                        setNameOfArtisanError("too short");
+                                        return;
+                                      } else {
+                                        if (
+                                          whatsappnumber.length > 1 &&
+                                          whatsappnumber.length < 11
+                                        ) {
+                                          setWhatsappNumberError("too short");
+                                          return;
+                                        } else {
+                                          if (
+                                            instahandle.length > 1 &&
+                                            instahandle.length < 11
+                                          ) {
+                                            setInstaHandleError("too short");
+                                            return;
+                                          } else {
+                                            try {
+                                              const result =
+                                                await create_artisan(
+                                                  username,
+                                                  password,
+                                                  confirmpassword,
+                                                  firstname,
+                                                  lastname,
+                                                  description,
+                                                  address,
+                                                  nameofartisan,
+                                                  phonenumber,
+                                                  additionalphonenumber,
+                                                  whatsappnumber,
+                                                  instahandle
+                                                );
+                                              final_result = result;
+                                            } catch (error) {
+                                              console.log(error);
+                                              return;
+                                            }
+                                            if (final_result.record) {
+                                              navigate(
+                                                "/artisan/accountinformation"
+                                              );
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
                   }
                 }
               }
@@ -72,13 +187,9 @@ export default function Multi() {
     if (step > 1) setSteps((step) => step - 1);
   }
 
-  function handleNext() {
-    if (step < 3) setSteps((step) => step + 1);
-  }
-
   return (
     <>
-      <div className="wrap">
+      <div className="wraps">
         <div className="progress_wrap">
           <Progress totalSteps={totalSteps} step={step} className="progress" />
           <div className={`${step >= 1 ? "circle active" : "circle"}`}>1</div>
@@ -87,8 +198,8 @@ export default function Multi() {
         </div>
         <div className="contents">
           {step === 1 && (
-            <div className="container second-form">
-              <h1>Artisan Registration</h1>
+            <div className="containers second-form">
+              <h1 className="header">Artisan Registration</h1>
               <form>
                 <h3>Personal Information</h3>
 
@@ -165,7 +276,10 @@ export default function Multi() {
                 </div>
                 <div className="registers-link">
                   <p>
-                    Already have an account?<span><Link to="/login"> Sign In</Link></span>
+                    Already have an account?
+                    <span>
+                      <Link to="/login"> Sign In</Link>
+                    </span>
                   </p>
                 </div>
               </form>
@@ -173,8 +287,8 @@ export default function Multi() {
           )}
           {step === 2 && (
             <div className="container second-form">
-              <h1>Artisan Registration</h1>
-              <form onSubmit>
+              <h1 className="header">Artisan Registration</h1>
+              <form>
                 <h3>Skill Information</h3>
                 <div className="artisan-category">
                   <h4>
@@ -190,7 +304,12 @@ export default function Multi() {
                   <textarea
                     placeholder="Describe what you do"
                     required
+                    value={description}
+                    onChange={(e) => setDesription(e.target.value)}
                   ></textarea>
+                  {descriptionError.length === 0 ? null : (
+                    <div className="error-message">{descriptionError}</div>
+                  )}
                 </div>
 
                 <div className="artisan-address">
@@ -202,24 +321,19 @@ export default function Multi() {
                     name="address"
                     placeholder="Where do you stay"
                     required
+                    value={address}
+                    onChange={(e) => setAddress(e.target.value)}
                   />
-                </div>
-
-                <div className="artisan-image">
-                  <h4>
-                    Add Image <span className="text-danger">*</span>
-                  </h4>
-                  <p>
-                    Not more than <span>5MB</span>
-                  </p>
-                  <input type="file" />
+                  {addressError.length === 0 ? null : (
+                    <div className="error-message">{addressError}</div>
+                  )}
                 </div>
               </form>
             </div>
           )}
           {step === 3 && (
             <div className="container second-form">
-              <h1>Artisan Registration</h1>
+              <h1 className="header">Artisan Registration</h1>
               <form>
                 <h3>Contact Information</h3>
                 <div>
@@ -235,7 +349,12 @@ export default function Multi() {
                       placeholder="Enter your phone number"
                       maxLength={11}
                       required
+                      value={phonenumber}
+                      onChange={(e) => setPhoneNumber(e.target.value)}
                     />
+                    {phonenumberError.length.length === 0 ? null : (
+                      <div className="error-message">{phonenumberError}</div>
+                    )}
                   </div>
 
                   <div className="artisan-number">
@@ -248,7 +367,30 @@ export default function Multi() {
                       placeholder="Enter your phone number"
                       maxLength={11}
                       required
+                      value={additionalphonenumber}
+                      onChange={(e) => setAdditionalPhoneNumber(e.target.value)}
                     />
+                    {additionalphonenumberError.length === 0 ? null : (
+                      <div className="error-message">
+                        {additionalphonenumberError}
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="artisan-number">
+                    <div>
+                      <label htmlFor="number">Business Name </label>
+                    </div>
+                    <input
+                      type="text"
+                      name="businessname"
+                      placeholder="Enter your business name, if any"
+                      value={nameofartisan}
+                      onChange={(e) => setNameOfArtisan(e.target.value)}
+                    />
+                    {nameofartisanError.length === 0 ? null : (
+                      <div className="error-message">{nameofartisanError}</div>
+                    )}
                   </div>
 
                   <div className="socials">
@@ -262,7 +404,14 @@ export default function Multi() {
                         name="whatsapp_number"
                         placeholder="Enter whatsapp number"
                         maxLength={11}
+                        value={whatsappnumber}
+                        onChange={(e) => setWhatsappNumber(e.target.value)}
                       />
+                      {whatsappnumberError.length === 0 ? null : (
+                        <div className="error-message">
+                          {whatsappnumberError}
+                        </div>
+                      )}
                     </div>
 
                     <div className="artisan-insta-handle">
@@ -273,7 +422,12 @@ export default function Multi() {
                         type="text"
                         name="insta_handle"
                         placeholder="Enter instagram handle"
+                        value={instahandle}
+                        onChange={(e) => setInstaHandle(e.target.value)}
                       />
+                      {instahandleError.length === 0 ? null : (
+                        <div className="error-message">{instahandleError}</div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -288,10 +442,16 @@ export default function Multi() {
           >
             prev <FaArrowLeft />
           </button>
-          <button className="btn-s" onClick={handleNext}>
-            {step === 3 ? "Submit" : "Next"}
-            {step === 3 ? null : <FaArrowRight />}
-          </button>
+
+          {step === 3 ? (
+            <button type="submit" className="btn-s">
+              Submit
+            </button>
+          ) : (
+            <button onClick={handleNext} className="btn-s">
+              Next <FaArrowRight />
+            </button>
+          )}
         </div>
       </div>
     </>

@@ -85,7 +85,7 @@ const Regform = () => {
           </Link>
         </span>
       </div>
-      <div className="wrapper">
+      <div className="wrap">
         <form onSubmit={(e) => handleSubmit(e)} >
           <h1>Client Registration</h1>
 

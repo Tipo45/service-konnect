@@ -20,53 +20,30 @@ const Footer = () => {
         <div className="sub_footer section_padding">
           <div className="sub_footer-links">
             <div className="sub_footer-links-div">
-              <h4>Connect</h4>
+              <h4>Other Projects</h4>
               <Link className="nodeco" to="#">
-                <p>Employer</p>
+                <p>Recipe Site</p>
               </Link>
               <Link className="nodeco" to="#">
-                <p>Employer</p>
+                <p>My Portfolio</p>
               </Link>
               <Link className="nodeco" to="#">
-                <p>Employer</p>
-              </Link>
-            </div>
-            <div className="sub_footer-as-div">
-              <h4>Connect</h4>
-              <Link className="nodeco" to="#">
-                <p>Employer</p>
-              </Link>
-              <Link className="nodeco" to="#">
-                <p>Employer</p>
-              </Link>
-              <Link className="nodeco" to="#">
-                <p>Employer</p>
+                <p>Sam`s Store</p>
               </Link>
             </div>
             <div className="sub_footer-links-div">
-              <h4>Connect</h4>
+              <h4>Upcoming Projects</h4>
               <Link className="nodeco" to="#">
-                <p>Employer</p>
+                <p>My Updated Portfolio</p>
               </Link>
               <Link className="nodeco" to="#">
-                <p>Employer</p>
+                <p>T-Coin</p>
               </Link>
               <Link className="nodeco" to="#">
-                <p>Employer</p>
-              </Link>
-            </div>
-            <div className="sub_footer-as-div">
-              <h4>Connect</h4>
-              <Link className="nodeco" to="#">
-                <p>Employer</p>
-              </Link>
-              <Link className="nodeco" to="#">
-                <p>Employer</p>
-              </Link>
-              <Link className="nodeco" to="#">
-                <p>Employer</p>
+                <p>Coming Soon..</p>
               </Link>
             </div>
+          
             <div className="sub_footer-links-div">
               <h4>Connect With Us</h4>
               <div className="socialmedia">
