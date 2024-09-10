@@ -1,6 +1,9 @@
 import "../../components/ArtisanUserProfile/Artisanaccinfo.css";
+import { useArtisanData } from "../../hooks/useArtisanData";
+
 
 const Artisanaccinfo = () => {
+  const {data} = useArtisanData()
   return (
     <div className="artisanaccountinformation">
       <h1 className="mainhead1">Personal Information</h1>
@@ -8,37 +11,37 @@ const Artisanaccinfo = () => {
       <div className="form">
       <div className="form-group">
           <label htmlFor="username">User Name</label>
-          <input type="text" name="name" id="name" readOnly />
+          <div className="displayed">{data?.username}</div>
         </div>
 
         <div className="form-group">
           <label htmlFor="firstname">First Name</label>
-          <input type="text" name="name" id="name" readOnly />
+          <div className="displayed">{data?.first_name}</div>
         </div>
 
         <div className="form-group">
           <label htmlFor="lastname">Last Name</label>
-          <input type="text" name="name" id="name" readOnly />
+          <div className="displayed"></div>
         </div>
 
         <div className="form-group">
           <label htmlFor="email">Email</label>
-          <input type="email" name="email" id="email" readOnly />
+          <div className="displayed"></div>
         </div>
 
         <div className="form-group">
           <label htmlFor="phone">Phone/Mobile</label>
-          <input type="text" name="phone" id="phone" />
+          <div className="displayed"></div>
         </div>
 
         <div className="form-group">
           <label htmlFor="businessname">Business Name</label>
-          <input type="text" name="name" id="name" readOnly />
+          <div className="displayed"></div>
         </div>
 
         <div className="form-group">
           <label htmlFor="address">Address</label>
-          <input type="text" name="name" id="name" readOnly />
+          <div className="displayed"></div>
         </div>
       </div>
     </div>

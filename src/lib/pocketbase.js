@@ -45,8 +45,9 @@ export function logout() {
   pb.authStore.clear();
 }
 
-export async function create_artisan( password, confirmpassword, firstname, lastname, description, address, nameofartisan, phonenumber, additionalphonenumber, whatsappnumber, instahandle) {
+export async function create_artisan( username, password, confirmpassword, firstname, lastname, description, address, nameofartisan, phonenumber, additionalphonenumber, whatsappnumber, instahandle) {
   const data = {
+    "username": username,
     "password": password,
     "passwordConfirm": confirmpassword,
     "first_name": firstname,
@@ -63,7 +64,7 @@ export async function create_artisan( password, confirmpassword, firstname, last
 await pb.collection('artisan').create(data);
 const record = await pb
     .collection("artisan")
-    .authWithPassword(nameofartisan, password);
+    .authWithPassword(username, password);
   return record;
 }
 
@@ -75,11 +76,9 @@ export async function artisan_info() {
 return record
 }
 
-export async function login_artisan(
-  nameofartisan, password
-) {
+export async function login_artisan(username, password) {
   const record = await pb.collection('artisan').authWithPassword(
-    nameofartisan,
+    username,
     password,
 );
 return record

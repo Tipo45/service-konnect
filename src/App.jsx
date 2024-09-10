@@ -12,6 +12,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Details from "./pages/SkillorServiceDetails/Details";
+import ArtisanLogin from "./pages/login/Art-Login";
 
 function App() {
   const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ function App() {
           <Route path="/clientregistration" element={<Regform />} />
           <Route path="/artisanregistration" element={<Registrationartisan />}/>
           <Route path="/login" element={<Logform />} />
+          <Route path="/artisanlogin" element={<ArtisanLogin />} />
           <Route path="/client/:activepage" element={<Client />} />
           <Route path="/artisan/:activepage" element={<Artisan />} />
           <Route path="/artisan-details" element={<Details />} />

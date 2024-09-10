@@ -1,12 +1,15 @@
 import "../../components/ArtisanUserProfile/Artisansidebar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { GrUserSettings } from "react-icons/gr";
 import { IoEyeOutline, IoPower } from "react-icons/io5";
 import { CiLocationOn } from "react-icons/ci";
 import { BiDetail } from "react-icons/bi";
 import { FaRegUser } from "react-icons/fa";
+import { logout } from "../../lib/pocketbase";
 
+// eslint-disable-next-line react/prop-types
 const Artisansidebar = ({ activepage }) => {
+  const navigate = useNavigate();
   return (
     <div className="artisansidebar">
       {activepage === "artisanaccountinformation" ? (
@@ -79,12 +82,10 @@ const Artisansidebar = ({ activepage }) => {
         </Link>
       )}
 
-      <Link to="/login" className="nodeco">
         <div className="s3">
-          <IoPower className="text-danger" />
-          <span className="text-dark">Logout</span>
+          <button onClick={() => {logout(),navigate("/artisanlogin") }}  className="text-dark btns"><IoPower className="text-danger" /> Logout</button>
         </div>
-      </Link>
+    
     </div>
   );
 };
