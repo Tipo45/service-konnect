@@ -22,58 +22,70 @@ const Regform = () => {
   const handleSubmit = async(e) => {
     e.preventDefault();
     let finalresult
-    if (firstname === "") {
+    if (firstname === ""){
       setFirstnameError("firstname required")
-      return 
+      return
     } else {
-      if (lastname === "") {
-       setLastnameError("lastname required");
-        return 
-      } else {
-        if (username === "") {
-          setUsernameError("username required");
-          return 
-        } else {
-          if (username.length < 4) {
-            setUsernameError("username is too short");
-            return 
-          } else {
-            if (username.length > 16) {
-              setUsernameError("username is too long");
-              return 
-            } else {
-              if (password === "") {
-                setPasswordError("password required");
-                return 
-              } else {
-                if (password.length < 8) {
-                  setPasswordError("password is too short");
-                  return 
-                } else {
-                  if (confirmpassword !== password) {
-                    setPasswordError("password do not match")
-                    setConfirmPasswordError("password do not match")
-                    return 
-                  }
-                  else{
-                    try { 
-                     const result = await  create_user(firstname,lastname,username,password,confirmpassword)
-                     finalresult = result
-                    } catch (error) {
-                      console.log(error)
-                      return
-                    }
-                    if(finalresult.record){
-                      navigate("/client/accountinformation");
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
+      setFirstnameError("")
+    }
+
+    if (lastname === "") {
+      setLastnameError("lastname required");
+      return;
+    } else {
+      setLastnameError(""); 
+    }
+
+    if (username === "") {
+      setUsernameError("username required");
+      return;
+    } else if (username.length < 4) {
+      setUsernameError("bussiness name is too short");
+      return;
+    } else if (username.length > 16) {
+      setUsernameError("business name is too long");
+      return;
+    } else {
+      setUsernameError("");  
+    }
+
+    if (password === "") {
+      setPasswordError("password required");
+      return;
+    } else if (password.length < 8) {
+      setPasswordError("password is too short");
+      return;
+    } else if (confirmpassword !== password) {
+      setPasswordError("password do not match");
+      setConfirmPasswordError("password do not match");
+      return;
+    } else {
+      setPasswordError("");  
+      setConfirmPasswordError("");  
+    }
+
+    if (!firstnameError && !lastnameError && !usernameError && !passwordError && !confirmPasswordError) {
+      try {
+        const result =  await create_user(
+          firstname,
+          lastname,
+          username,
+          password,
+          confirmpassword
+        );
+        finalresult = result;
+      } catch (error) {
+        console.log(error);
+        return;
+      }
+
+      if(finalresult.record) {
+        navigate("/client/accountinformation")
       }
     }
+
+
+   
   };
 
   return (
