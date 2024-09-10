@@ -13,18 +13,18 @@
 }
 
 .full-content {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    margin: 1% 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 1% 0;
 }
 
 .full-contentin {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    margin: 1vh 0;
-    gap: 20px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 1vh 0;
+  gap: 20px;
 }
 
 .left-side {
@@ -42,52 +42,45 @@
 }
 
 @media (min-width: 320px) {
-
-    .full-content {
-        margin-bottom: 50px;
-    }
+  .full-content {
+    margin-bottom: 50px;
+  }
 }
 
 @media (min-width: 375px) {
-
-    .full-content {
-        margin-bottom: 50px;
-    }
+  .full-content {
+    margin-bottom: 50px;
+  }
 }
 
 @media (min-width: 425px) {
-
-    .full-content {
-        margin-bottom: 50px;
-    }
+  .full-content {
+    margin-bottom: 50px;
+  }
 }
 
 @media (min-width: 475px) {
-    
-    .full-content {
-        margin-bottom: 50px;
-    }
+  .full-content {
+    margin-bottom: 50px;
+  }
 }
 
 @media (min-width: 768px) {
-    
-    .full-content {
-        margin-bottom: 50px;
-    }
+  .full-content {
+    margin-bottom: 50px;
+  }
 }
 
 @media (min-width: 1024px) {
-
-    .full-content {
-        margin-top: 40px;
-        margin-bottom: 50px;
-    }
+  .full-content {
+    margin-top: 40px;
+    margin-bottom: 50px;
+  }
 }
 
 @media (min-width: 1440px) {
-
-    .full-content {
-        margin-top: 50px;
-        margin-bottom: 60px;
-    }
+  .full-content {
+    margin-top: 50px;
+    margin-bottom: 60px;
+  }
 }

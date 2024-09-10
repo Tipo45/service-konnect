@@ -10,15 +10,12 @@ import { create_artisan } from "../../lib/pocketbase";
 
 export default function Multi() {
   const [selected, setSelected] = useState("");
-
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
-  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmpassword, setConfirmPassword] = useState("");
   const [firstnameError, setFirstnameError] = useState("");
   const [lastnameError, setLastnameError] = useState("");
-  const [usernameError, setUsernameError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [confirmPasswordError, setConfirmPasswordError] = useState("");
   const [description, setDesription] = useState("");
@@ -28,8 +25,7 @@ export default function Multi() {
   const [phonenumber, setPhoneNumber] = useState("");
   const [phonenumberError, setPhoneNumberError] = useState("");
   const [additionalphonenumber, setAdditionalPhoneNumber] = useState("");
-  const [additionalphonenumberError, setAdditionalPhoneNumberError] =
-    useState("");
+  const [additionalphonenumberError, setAdditionalPhoneNumberError] =  useState("");
   const [whatsappnumber, setWhatsappNumber] = useState("");
   const [instahandle, setInstaHandle] = useState("");
   const [whatsappnumberError, setWhatsappNumberError] = useState("");
@@ -41,144 +37,143 @@ export default function Multi() {
   const handleNext = async (e) => {
     let final_result;
     e.preventDefault();
+    
+    
     if (firstname === "") {
       setFirstnameError("firstname required");
       return;
     } else {
-      if (lastname === "") {
-        setLastnameError("lastname required");
+      setFirstnameError("");  
+    }
+    
+    
+    if (lastname === "") {
+      setLastnameError("lastname required");
+      return;
+    } else {
+      setLastnameError(""); 
+    }
+    
+    
+    if (nameofartisan === "") {
+      setNameOfArtisanError("business name required");
+      return;
+    } else if (nameofartisan.length < 4) {
+      setNameOfArtisanError("bussiness name is too short");
+      return;
+    } else if (nameofartisan.length > 16) {
+      setNameOfArtisanError("business name is too long");
+      return;
+    } else {
+      setNameOfArtisanError("");  
+    }
+    
+   
+    if (password === "") {
+      setPasswordError("password required");
+      return;
+    } else if (password.length < 8) {
+      setPasswordError("password is too short");
+      return;
+    } else if (confirmpassword !== password) {
+      setPasswordError("password do not match");
+      setConfirmPasswordError("password do not match");
+      return;
+    } else {
+      setPasswordError("");  
+      setConfirmPasswordError("");  
+    }
+    
+    setSteps(2);
+    
+    if (step === 2) {
+      if (description === "") {
+        setDescriptionError("required");
+        return;
+      } else if (description.length < 20) {
+        setDescriptionError("too short");
         return;
       } else {
-        if (username === "") {
-          setUsernameError("username required");
-          return;
-        } else {
-          if (username.length < 4) {
-            setUsernameError("username is too short");
-            return;
-          } else {
-            if (username.length > 16) {
-              setUsernameError("username is too long");
-              return;
-            } else {
-              if (password === "") {
-                setPasswordError("password required");
-                return;
-              } else {
-                if (password.length < 8) {
-                  setPasswordError("password is too short");
-                  return;
-                } else {
-                  if (confirmpassword !== password) {
-                    setPasswordError("password do not match");
-                    setConfirmPasswordError("password do not match");
-                    return;
-                  } else {
-                    setSteps(2);
-                    if (step === 2) {
-                      if (description === "") {
-                        setDescriptionError("required");
-                        return;
-                      } else {
-                        if (description.length < 20) {
-                          setDescriptionError("too short");
-                          return;
-                        } else {
-                          if (address === "") {
-                            setAddressError("required");
-                            return;
-                          } else {
-                            if (address.length < 22) {
-                              setAddressError("too short");
-                              return;
-                            } else {
-                              setSteps(3);
-                              if (step === 3) {
-                                if (phonenumber === "") {
-                                  setPhoneNumberError("required");
-                                  return;
-                                } else {
-                                  if (phonenumber.length < 11) {
-                                    setPhoneNumberError("too short");
-                                    return;
-                                  } else {
-                                    if (
-                                      additionalphonenumber.length > 1 &&
-                                      additionalphonenumber.length < 11
-                                    ) {
-                                      setAdditionalPhoneNumberError(
-                                        "too short"
-                                      );
-                                      return;
-                                    } else {
-                                      if (
-                                        nameofartisan.length > 1 &&
-                                        nameofartisan.length > 4
-                                      ) {
-                                        setNameOfArtisanError("too short");
-                                        return;
-                                      } else {
-                                        if (
-                                          whatsappnumber.length > 1 &&
-                                          whatsappnumber.length < 11
-                                        ) {
-                                          setWhatsappNumberError("too short");
-                                          return;
-                                        } else {
-                                          if (
-                                            instahandle.length > 1 &&
-                                            instahandle.length < 11
-                                          ) {
-                                            setInstaHandleError("too short");
-                                            return;
-                                          } else {
-                                            try {
-                                              const result =
-                                                await create_artisan(
-                                                  username,
-                                                  password,
-                                                  confirmpassword,
-                                                  firstname,
-                                                  lastname,
-                                                  description,
-                                                  address,
-                                                  nameofartisan,
-                                                  phonenumber,
-                                                  additionalphonenumber,
-                                                  whatsappnumber,
-                                                  instahandle
-                                                );
-                                              final_result = result;
-                                            } catch (error) {
-                                              console.log(error);
-                                              return;
-                                            }
-                                            if (final_result.record) {
-                                              navigate(
-                                                "/artisan/accountinformation"
-                                              );
-                                            }
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
+        setDescriptionError("");  
+      }
+  
+      
+      if (address === "") {
+        setAddressError("required");
+        return;
+      } else if (address.length < 22) {
+        setAddressError("too short");
+        return;
+      } else {
+        setAddressError("");
+      }
+  
+      setSteps(3);
+    }
+  
+    if (step === 3) {
+
+      if (phonenumber === "") {
+        setPhoneNumberError("required");
+        return;
+      } else if (phonenumber.length < 11) {
+        setPhoneNumberError("too short");
+        return;
+      } else {
+        setPhoneNumberError("");  
+      }
+  
+      
+      if (additionalphonenumber.length > 1 && additionalphonenumber.length < 11) {
+        setAdditionalPhoneNumberError("too short");
+        return;
+      } else {
+        setAdditionalPhoneNumberError("");  
+      }
+  
+      
+      if (whatsappnumber.length > 1 && whatsappnumber.length < 11) {
+        setWhatsappNumberError("too short");
+        return;
+      } else {
+        setWhatsappNumberError(""); 
+      }
+  
+
+      if (instahandle.length > 1 && instahandle.length < 11) {
+        setInstaHandleError("too short");
+        return;
+      } else {
+        setInstaHandleError(""); 
+      }
+  
+      
+      try {
+        const result = await create_artisan(
+          password,
+          confirmpassword,
+          firstname,
+          lastname,
+          description,
+          address,
+          nameofartisan,
+          phonenumber,
+          additionalphonenumber,
+          whatsappnumber,
+          instahandle
+        );
+        final_result = result;
+      } catch (error) {
+        console.log(error);
+        return;
+      }
+      
+      if (final_result.record) {
+        navigate("/artisan/accountinformation");
       }
     }
   };
+  
 
   const [step, setSteps] = useState(1);
   const totalSteps = 3;
@@ -213,9 +208,7 @@ export default function Multi() {
                       placeholder="Firstname"
                       className="reg_names"
                     />
-                    {firstnameError.length === 0 ? null : (
-                      <div className="error-message">{firstnameError}</div>
-                    )}
+                    {firstnameError.length === 0 ? null : (<div className="error-message">{firstnameError}</div>)}
                   </div>
 
                   <div className="a-input_box">
@@ -236,14 +229,14 @@ export default function Multi() {
                 <div className="a-input_box">
                   <FaUserAlt className="a-input-icon" />
                   <input
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
+                    value={nameofartisan}
+                    onChange={(e) => setNameOfArtisan(e.target.value)}
                     type="text"
-                    placeholder="Username"
+                    placeholder="Bussiness name"
                     maxLength="16"
                   />
-                  {usernameError.length === 0 ? null : (
-                    <div className="error-message">{usernameError}</div>
+                  {nameofartisanError.length === 0 ? null : (
+                    <div className="error-message">{nameofartisanError}</div>
                   )}
                 </div>
 
@@ -262,7 +255,7 @@ export default function Multi() {
                 </div>
 
                 <div className="a-input_box">
-                  <FaLock className="a-input-icon" />
+                  <FaLock className="a-input-icon icon-active" />
                   <input
                     value={confirmpassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
@@ -334,7 +327,7 @@ export default function Multi() {
           {step === 3 && (
             <div className="container second-form">
               <h1 className="header">Artisan Registration</h1>
-              <form>
+              <form onSubmit={handleNext}>
                 <h3>Contact Information</h3>
                 <div>
                   <div className="artisan-number">
@@ -374,22 +367,6 @@ export default function Multi() {
                       <div className="error-message">
                         {additionalphonenumberError}
                       </div>
-                    )}
-                  </div>
-
-                  <div className="artisan-number">
-                    <div>
-                      <label htmlFor="number">Business Name </label>
-                    </div>
-                    <input
-                      type="text"
-                      name="businessname"
-                      placeholder="Enter your business name, if any"
-                      value={nameofartisan}
-                      onChange={(e) => setNameOfArtisan(e.target.value)}
-                    />
-                    {nameofartisanError.length === 0 ? null : (
-                      <div className="error-message">{nameofartisanError}</div>
                     )}
                   </div>
 

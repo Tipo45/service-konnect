@@ -46,15 +46,15 @@ const Navbar = () => {
 
               <div className="sidebar">
                 <div className="social-links">
-                  <a href="#" target="_blank">
+                  <Link to="#" target="_blank">
                     <FaWhatsapp />
-                  </a>
-                  <a href="#" target="_blank">
+                  </Link>
+                  <Link to="#" target="_blank">
                     <FaTwitter />
-                  </a>
-                  <a href="#" target="_blank">
+                  </Link>
+                  <Link to="#" target="_blank">
                     <FaInstagram />
-                  </a>
+                  </Link>
                 </div>
               </div>
               

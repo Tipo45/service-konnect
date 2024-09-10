@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../../components/Skillorproducts/Art.css";
 import { FaRegStar } from "react-icons/fa";
 
@@ -38,7 +39,9 @@ const Tailors = () => {
                     </p>
                   </div>
                   <div>
-                    <h3>View</h3>
+                    <Link to="/artisan-details">
+                      <h3 className="no-deco">View</h3>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -72,7 +75,7 @@ const Tailors = () => {
                     </p>
                   </div>
                   <div>
-                    <h3>View</h3>
+                    <h3 className="no-deco">View</h3>
                   </div>
                 </div>
               </div>
@@ -106,7 +109,7 @@ const Tailors = () => {
                     </p>
                   </div>
                   <div>
-                    <h3>View</h3>
+                    <h3 className="no-deco">View</h3>
                   </div>
                 </div>
               </div>
@@ -140,7 +143,7 @@ const Tailors = () => {
                     </p>
                   </div>
                   <div>
-                    <h3>View</h3>
+                    <h3 className="no-deco">View</h3>
                   </div>
                 </div>
               </div>
@@ -174,7 +177,7 @@ const Tailors = () => {
                     </p>
                   </div>
                   <div>
-                    <h3>View</h3>
+                    <h3 className="no-deco">View</h3>
                   </div>
                 </div>
               </div>
@@ -208,7 +211,7 @@ const Tailors = () => {
                     </p>
                   </div>
                   <div>
-                    <h3>View</h3>
+                    <h3 className="no-deco">View</h3>
                   </div>
                 </div>
               </div>
@@ -242,7 +245,7 @@ const Tailors = () => {
                     </p>
                   </div>
                   <div>
-                    <h3>View</h3>
+                    <h3 className="no-deco">View</h3>
                   </div>
                 </div>
               </div>
@@ -284,7 +287,7 @@ const Tailors = () => {
                     </p>
                   </div>
                   <div>
-                    <h3>View</h3>
+                    <h3 className="no-deco">View</h3>
                   </div>
                 </div>
               </div>
@@ -318,7 +321,7 @@ const Tailors = () => {
                     </p>
                   </div>
                   <div>
-                    <h3>View</h3>
+                    <h3 className="no-deco">View</h3>
                   </div>
                 </div>
               </div>
@@ -352,7 +355,7 @@ const Tailors = () => {
                     </p>
                   </div>
                   <div>
-                    <h3>View</h3>
+                    <h3 className="no-deco">View</h3>
                   </div>
                 </div>
               </div>
@@ -386,7 +389,7 @@ const Tailors = () => {
                     </p>
                   </div>
                   <div>
-                    <h3>View</h3>
+                    <h3 className="no-deco">View</h3>
                   </div>
                 </div>
               </div>
@@ -420,7 +423,7 @@ const Tailors = () => {
                     </p>
                   </div>
                   <div>
-                    <h3>View</h3>
+                    <h3 className="no-deco">View</h3>
                   </div>
                 </div>
               </div>

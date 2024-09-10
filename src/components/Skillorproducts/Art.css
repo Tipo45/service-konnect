@@ -1,4 +1,4 @@
-* {
+.no-deco {
   text-decoration: none !important;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .art-category {
-  padding: 10px;
+  padding: 6px;
   width: 70px;
   background: #e0e0e0;
   border-radius: 0.5rem;
@@ -35,6 +35,8 @@
 
 .price p {
   font-size: 0.8rem;
+  color: #424242;
+  font-weight: 600;
 }
 
 .ratings p span svg {

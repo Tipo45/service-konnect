@@ -210,7 +210,7 @@ const Home = () => {
         </div>
         <div className="arts">
           <section className="steps-container" id="steps-container">
-            <h2 className="section-heads">On Demand Art works</h2>
+            <h2 className="section-heads">On Demand Products</h2>
             <div className="steps-container-content">
               <div className="category">
                 <img

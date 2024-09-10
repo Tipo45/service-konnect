@@ -38,7 +38,7 @@ const Art = () => {
                     </p>
                   </div>
                   <div>
-                    <h3>View</h3>
+                    <h3 className="no-deco">View</h3>
                   </div>
                 </div>
               </div>
@@ -72,7 +72,7 @@ const Art = () => {
                     </p>
                   </div>
                   <div>
-                    <h3>View</h3>
+                    <h3 className="no-deco">View</h3>
                   </div>
                 </div>
               </div>
@@ -106,7 +106,7 @@ const Art = () => {
                     </p>
                   </div>
                   <div>
-                    <h3>View</h3>
+                    <h3 className="no-deco">View</h3>
                   </div>
                 </div>
               </div>
@@ -140,7 +140,7 @@ const Art = () => {
                     </p>
                   </div>
                   <div>
-                    <h3>View</h3>
+                    <h3 className="no-deco">View</h3>
                   </div>
                 </div>
               </div>
@@ -174,7 +174,7 @@ const Art = () => {
                     </p>
                   </div>
                   <div>
-                    <h3>View</h3>
+                    <h3 className="no-deco">View</h3>
                   </div>
                 </div>
               </div>
@@ -208,7 +208,7 @@ const Art = () => {
                     </p>
                   </div>
                   <div>
-                    <h3>View</h3>
+                    <h3 className="no-deco">View</h3>
                   </div>
                 </div>
               </div>
@@ -242,7 +242,7 @@ const Art = () => {
                     </p>
                   </div>
                   <div>
-                    <h3>View</h3>
+                    <h3 className="no-deco">View</h3>
                   </div>
                 </div>
               </div>
@@ -283,7 +283,7 @@ const Art = () => {
                     </p>
                   </div>
                   <div>
-                    <h3>View</h3>
+                    <h3 className="no-deco">View</h3>
                   </div>
                 </div>
               </div>
@@ -317,7 +317,7 @@ const Art = () => {
                     </p>
                   </div>
                   <div>
-                    <h3>View</h3>
+                    <h3 className="no-deco">View</h3>
                   </div>
                 </div>
               </div>
@@ -351,7 +351,7 @@ const Art = () => {
                     </p>
                   </div>
                   <div>
-                    <h3>View</h3>
+                    <h3 className="no-deco">View</h3>
                   </div>
                 </div>
               </div>
@@ -385,7 +385,7 @@ const Art = () => {
                     </p>
                   </div>
                   <div>
-                    <h3>View</h3>
+                    <h3 className="no-deco">View</h3>
                   </div>
                 </div>
               </div>
@@ -419,7 +419,7 @@ const Art = () => {
                     </p>
                   </div>
                   <div>
-                    <h3>View</h3>
+                    <h3 className="no-deco">View</h3>
                   </div>
                 </div>
               </div>

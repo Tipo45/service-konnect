@@ -86,10 +86,10 @@ const handleSubmit = async(e) => {
                 Login
               </button>
             <div className="register-link">
-              <p>
-                Don`t have an account?
-                <Link to="/clientregistration">Register Here</Link>
-              </p>
+               <p>Don`t have an account?
+               <Link to="/clientregistration"> Register Here</Link></p><p>Are you an artisan? 
+               <Link to="/clientregistration"> Sign In here</Link></p>
+
             </div>
 
           </form>

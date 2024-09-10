@@ -1,5 +1,5 @@
-.h1 {
-  text-align: center !important;
+h3 {
+  text-decoration: underline !important;
 }
 
 .progress_wrap {
@@ -13,7 +13,7 @@
 .progress_wrap::before {
   content: "";
   position: absolute;
-  background: red;
+  background: #E0E0E0 !important;
   height: 4px;
   width: 100%;
   top: 50%;
@@ -23,7 +23,6 @@
 }
 
 .progress {
-  background: green;
   position: absolute;
   top: 50%;
   width: 100%;
@@ -35,7 +34,8 @@
 }
 
 .circle {
-  background: rgb(238, 6, 238);
+  background: #FAFAFA;
+  color: #1A237E;
   height: 30px;
   width: 30px;
   display: flex;
@@ -46,9 +46,9 @@
 }
 
 .circle.active {
-  border-color: yellow;
-  color: blue;
-  background: #f4f4f4;
+  border: #1A237E;
+  color: #FAFAFA;
+  background: #1A237E;
 }
 
 .buttns {
@@ -64,8 +64,8 @@
   cursor: pointer;
   font-size: 1rem;
   border-radius: 4px;
-  background: teal;
-  color: #f4f4f4;
+  background: #1A237E;
+  color: #FAFAFA;
   padding: 4px 30px;
 }
 
@@ -79,9 +79,9 @@
   border: none;
   cursor: pointer;
   border-radius: 4px;
-  color: rgb(189, 186, 186);
+  color: #E0E0E0;
   padding: 4px 40px;
-  background: rgb(222, 225, 228);
+  background: #FAFAFA;
   cursor: not-allowed !important;
 }
 
@@ -103,7 +103,7 @@
 .a-input_box input {
   width: 100%;
   height: 100%;
-  background: #f4f4f4;
+  background: #FAFAFA;
   border: none;
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 40px;

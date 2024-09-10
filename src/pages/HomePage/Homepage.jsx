@@ -15,7 +15,7 @@ const Homepage = () => {
             <Carousel.Item>
               <img src={slider1} alt="slider1" className="slider-image" />
               <Carousel.Caption>
-                <h3>Best of the Best</h3>
+                <h3 className="no-deco">Best of the Best</h3>
                 <p>Get connected with skilled craftsmen</p>
               </Carousel.Caption>
             </Carousel.Item>
@@ -26,7 +26,7 @@ const Homepage = () => {
                 className="slider-image"
               />
               <Carousel.Caption>
-                <h3>Our Services are top notch</h3>
+                <h3 className="no-deco">Our Services are top notch</h3>
                 <p>We boast of several skilled and seasoned service renders</p>
               </Carousel.Caption>
             </Carousel.Item>
@@ -37,7 +37,7 @@ const Homepage = () => {
                 className="slider-image"
               />
               <Carousel.Caption>
-                <h3>Register to get started</h3>
+                <h3 className="no-deco">Register to get started</h3>
                 <p>
                   Don`t miss out on this opportunity to become a listed artisan
                   in our database!!

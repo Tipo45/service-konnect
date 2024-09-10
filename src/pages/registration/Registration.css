@@ -21,7 +21,7 @@
   align-items: center;
   width: 100%;
   max-width: 300px;
-  background: #aac8fc;
+  background: #E0E0E0;
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
   padding: 30px 20px;
@@ -34,18 +34,19 @@
   font-weight: 600;
   text-align: center;
   margin-bottom: 1.25rem;
+  color: #1A237E;
 }
 
 .wrap .c-input-box {
   position: relative;
   width: 100%;
   height: 30px;
-  margin: 2.2rem 0;
+  margin: 3.2rem 0;
 }
 
 .c-input-box input {
   width: 250px;
-  background: #f4f4f4;
+  background: #fafafa;
   border: none;
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 40px;
@@ -96,7 +97,7 @@
 .btn {
   width: 100%;
   min-width: 100% !important;
-  background-color: #5995fd !important;
+  background-color: #1A237E !important;
   border: none;
   outline: none;
   height: 45px;
@@ -110,7 +111,7 @@
 }
 
 .btn:hover {
-  background-color: #114fbb !important;
+  background-color: #101657 !important;
   color: black !important;
 }
 
@@ -200,7 +201,7 @@
   }
 
   .c-input-box {
-    margin: 0.75rem 0;
+    margin: 3.5rem 0 !important;
   }
 
   .c-input-box input {

@@ -29,6 +29,7 @@ header {
 
 .container-sm ul li a:hover {
   background: #009688;
+  color: #FAFAFA !important;
 }
 
 .container-sm nav .logo h2 {
@@ -75,7 +76,11 @@ header {
 }
 
 .social-links a {
-  padding: 5%;
+  padding: 6%;
+}
+
+.social-links a svg {
+  color: #009688;
 }
 
 .big_footer {
@@ -267,8 +272,9 @@ header {
     border-radius: 10px;
   }
 
-  .nav-link ul li a:hover {
-    background: #009688;
+  .container-sm ul li a:hover {
+    background: none;
+    color: #009688 !important;
   }
 
   .social-links {
