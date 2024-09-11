@@ -271,7 +271,7 @@ export default function Multi() {
                   <p>
                     Already have an account?
                     <span>
-                      <Link to="/login"> Sign In</Link>
+                      <Link to="/artisanlogin"> Sign In</Link>
                     </span>
                   </p>
                 </div>

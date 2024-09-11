@@ -1,0 +1,165 @@
+.skill-content {
+  margin-top: 5px;
+  margin-bottom: 50px;
+}
+
+.skillimage .image-slider .slider-images {
+  width: 300px;
+  height: 200px;
+  border: grey solid;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.dets {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  padding: 10px;
+}
+
+.skillinfo h1 {
+  font-size: 2rem;
+}
+
+.skillinfo .pricesec .pricelarge {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.des {
+  font-size: 0.8rem;
+}
+
+@media (min-width: 375px) {
+  .skillimage .image-slider .slider-images {
+    width: 360px !important;
+    height: 300px;
+  }
+}
+
+@media (min-width: 425px) {
+  .skillimage .image-slider .slider-images {
+    width: 400px !important;
+    height: 300px;
+  }
+}
+
+@media (min-width: 475px) {
+  .skillimage .image-slider .slider-images {
+    width: 950px !important;
+    height: 300px;
+  }
+}
+
+@media (min-width: 768px) {
+  .skillimage .image-slider .slider-images {
+    width: 700px !important;
+    height: 450px;
+  }
+
+  .dets {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 300px;
+  }
+
+  .skillinfo {
+    /* background: red; */
+    padding-top: 4%;
+    padding-left: 4%;
+  }
+
+  .skillinfo h1 {
+    font-size: 2.2rem;
+  }
+
+  .skillinfo .pricesec .pricelarge {
+    font-size: 1.3rem;
+  }
+
+  .des {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 800px) {
+  .skillimage .image-slider .slider-images {
+    width: 700px !important;
+    height: 450px;
+  }
+
+  .dets {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 100px;
+  }
+
+  .skillinfo h1 {
+    font-size: 2.3rem;
+  }
+
+  .skillinfo .pricesec .pricelarge {
+    font-size: 1.4rem;
+  }
+
+  .des {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .skillimage {
+    width: 100%;
+    height: auto;
+    padding: 0px;
+    overflow: hidden;
+  }
+
+  .skillimage .image-slider .slider-images {
+    width: 950px !important;
+    height: 450px;
+  }
+
+  .image-slider {
+    padding-top: 30px;
+  }
+
+  .dets {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 400px;
+  }
+
+  .skillinfo h1 {
+    font-size: 2.5rem;
+  }
+
+  .skillinfo .pricesec .pricelarge {
+    font-size: 1.5rem;
+  }
+
+  .des {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .skillimage .image-slider .slider-images {
+    width: 1000px !important;
+    height: 500px;
+  }
+
+  /* .dets {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 400px;
+  } */
+
+  .skillinfo h1 {
+    font-size: 2.7rem;
+  }
+
+  .skillinfo .pricesec .pricelarge {
+    font-size: 1.8rem;
+  }
+
+  .des {
+    font-size: 1.5rem;
+  }
+}
