@@ -13,6 +13,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Details from "./pages/SkillorServiceDetails/Details";
 import ArtisanLogin from "./pages/login/Art-Login";
+import Payment from "./pages/Payment/Payment";
 
 function App() {
   const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ function App() {
           <Route path="/client/:activepage" element={<Client />} />
           <Route path="/artisan/:activepage" element={<Artisan />} />
           <Route path="/artisan-details" element={<Details />} />
+          <Route path="/paymentpage" element={<Payment />} />
 
           <Route path="*" element={<NoPage />} />
         </Routes>

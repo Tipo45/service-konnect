@@ -15,6 +15,7 @@
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   padding: 10px;
+  gap: 20px;
 }
 
 .skillinfo h1 {
@@ -26,8 +27,25 @@
   font-weight: bold;
 }
 
+.btn svg {
+  font-size: 1.2rem;
+}
+
 .des {
+  margin-top: 20px;
   font-size: 0.8rem;
+}
+
+.stars svg {
+  font-size: 1.5rem;
+}
+
+.comments-section textarea {
+  margin-top: 20px;
+  width: 80%;
+  height: 100px;
+  padding: 2% 10px;
+  border-radius: 5px;
 }
 
 @media (min-width: 375px) {
@@ -57,11 +75,6 @@
     height: 450px;
   }
 
-  .dets {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 300px;
-  }
-
   .skillinfo {
     /* background: red; */
     padding-top: 4%;
@@ -76,8 +89,28 @@
     font-size: 1.3rem;
   }
 
+  .contact-artisan {
+    font-size: 1.3rem;
+  }
+
   .des {
     font-size: 1.1rem;
+  }
+
+  .btn svg {
+    font-size: 1.5rem;
+  }
+
+  .stars svg {
+    font-size: 1.6rem;
+  }
+
+  .comments-section form label {
+    font-size: 1.4rem;
+  }
+
+  .comments-section textarea {
+    font-size: 1.2rem;
   }
 }
 
@@ -88,8 +121,7 @@
   }
 
   .dets {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 100px;
+    gap: 50px;
   }
 
   .skillinfo h1 {
@@ -100,8 +132,29 @@
     font-size: 1.4rem;
   }
 
+  .contact-artisan {
+    font-size: 1.4rem;
+  }
+
   .des {
     font-size: 1.2rem;
+  }
+
+  .stars svg {
+    font-size: 1.8rem;
+  }
+
+  .btn svg {
+    font-size: 1.6rem;
+  }
+
+  .comments-section form label {
+    font-size: 1.5rem;
+  }
+
+  .comments-section textarea {
+    font-size: 1.4rem;
+    height: 150px;
   }
 }
 
@@ -122,11 +175,6 @@
     padding-top: 30px;
   }
 
-  .dets {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 400px;
-  }
-
   .skillinfo h1 {
     font-size: 2.5rem;
   }
@@ -135,8 +183,28 @@
     font-size: 1.5rem;
   }
 
+  .contact-artisan {
+    font-size: 1.6rem;
+  }
+
   .des {
     font-size: 1.6rem;
+  }
+
+  .btn svg {
+    font-size: 1.6rem;
+  }
+
+  .stars svg {
+    font-size: 2rem;
+  }
+
+  .comments-section form label {
+    font-size: 1.6rem;
+  }
+
+  .comments-section textarea {
+    font-size: 1.5rem;
   }
 }
 
@@ -146,11 +214,6 @@
     height: 500px;
   }
 
-  /* .dets {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 400px;
-  } */
-
   .skillinfo h1 {
     font-size: 2.7rem;
   }
@@ -159,7 +222,35 @@
     font-size: 1.8rem;
   }
 
+  .contact-artisan {
+    font-size: 1.8rem;
+  }
+
   .des {
     font-size: 1.5rem;
+  }
+
+  .btn svg {
+    font-size: 1.5rem;
+  }
+
+  .rateandcomment h4 {
+    font-size: 2.5rem;
+  }
+
+  .rate-artisan h4 {
+    font-size: 2rem;
+  }
+
+  .stars svg {
+    font-size: 2rem;
+  }
+
+  .comments-section form label {
+    font-size: 2rem;
+  }
+
+  .comments-section textarea {
+    font-size: 1.9rem;
   }
 }

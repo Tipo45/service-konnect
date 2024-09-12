@@ -4,6 +4,8 @@ import Navbar from "../../components/GeneralComponents/Navbar";
 import slider1 from "../../assets/images/Neon_06.jpg";
 import "../../pages/SkillorServiceDetails/Details.css";
 import Artisandetailsfooter from "../../components/ArtisanDetails/Artisandetailsfooter";
+import { RiSecurePaymentLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 const Details = () => {
   return (
@@ -50,7 +52,12 @@ const Details = () => {
                       ₦10,000 - ₦15,000 <span>(per hour)</span>
                     </p>
                   </div>
-
+                  <div className="contact-artisan">
+                    <p>Phone Number: <span>+(234) 8135854955</span></p>
+                    <p>Whatsapp Contact: <span>08135854955</span></p>
+                    <p>Instagram Handle: <span>GEn_DocTOR</span></p>
+                  </div>
+                  <Link to="/paymentpage"><button className="btn">Pay for services <RiSecurePaymentLine /></button></Link>
                   <p className="text-bg des">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Tempore excepturi quibusdam alias magni ipsam, perspiciatis
@@ -59,13 +66,23 @@ const Details = () => {
                   </p>
                 </div>
 
-                <div className="col-md-9 skillinfo">
+                <div className="col-md-9 skillinfo rateandcomment">
                   <h4>Rating and Comments</h4>
-                  <div className="d-flex align-items-center mb-4">
-                    <p>Artisan Rating  <span className="text-bg">(3 reviews)</span></p>
+
+                  <div className="rate-artisan">
+                  <h4>Rate Artisan</h4>
+                  <div className=" d-flex align-items-center mb-3 stars">
+                    <p><Rating defaultValue={0} /></p>
+                  </div>
                   </div>
 
-                  <div className=" d-flex align-items-center mb-3">
+                  <div className="comments-section">
+                    <form>
+                    <label>What was your experience with this artisan?</label>
+                    <textarea placeholder="Leave a comment..." required></textarea>
+                    <button type="submit" className="btn">Submit</button>
+                    </form>
+                    
                   </div>
 
                 
