@@ -28,15 +28,11 @@ export default function Multi() {
   const [phonenumber, setPhoneNumber] = useState("");
   const [phonenumberError, setPhoneNumberError] = useState("");
   const [additionalphonenumber, setAdditionalPhoneNumber] = useState("");
-  const [additionalphonenumberError, setAdditionalPhoneNumberError] =
-    useState("");
   const [whatsappnumber, setWhatsappNumber] = useState("");
   const [instahandle, setInstaHandle] = useState("");
-  const [whatsappnumberError, setWhatsappNumberError] = useState("");
-  const [instahandleError, setInstaHandleError] = useState("");
   const [nameofartisan, setNameOfArtisan] = useState("");
   const [nameofartisanError, setNameOfArtisanError] = useState("");
-  const [loading, setLoading] = useState(false); // Loading state
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleNext = async (e) => {
@@ -60,7 +56,7 @@ export default function Multi() {
       setUsernameError("username required");
       return;
     } else if (username.length < 4) {
-      setUsernameError("username is too short")
+      setUsernameError("username is too short");
     } else {
       setUsernameError("");
     }
@@ -69,7 +65,7 @@ export default function Multi() {
       setNameOfArtisanError("business name required");
       return;
     } else if (nameofartisan.length < 4) {
-      setNameOfArtisanError("business name is too short");
+      setNameOfArtisanError("bussiness name is too short");
       return;
     } else if (nameofartisan.length > 16) {
       setNameOfArtisanError("business name is too long");
@@ -85,8 +81,8 @@ export default function Multi() {
       setPasswordError("password is too short");
       return;
     } else if (confirmpassword !== password) {
-      setPasswordError("passwords do not match");
-      setConfirmPasswordError("passwords do not match");
+      setPasswordError("password do not match");
+      setConfirmPasswordError("password do not match");
       return;
     } else {
       setPasswordError("");
@@ -118,41 +114,19 @@ export default function Multi() {
 
       setSteps(3);
     }
-
-    if (step === 3) {
-
-      if (
-        additionalphonenumber.length > 1 &&
-        additionalphonenumber.length < 11
-      ) {
-        setAdditionalPhoneNumberError("too short");
-        return;
-      } else {
-        setAdditionalPhoneNumberError("");
-      }
-
-      if (whatsappnumber.length > 1 && whatsappnumber.length < 11) {
-        setWhatsappNumberError("too short");
-        return;
-      } else {
-        setWhatsappNumberError("");
-      }
-
-      if (instahandle.length > 1 && instahandle.length < 11) {
-        setInstaHandleError("too short");
-        return;
-      } else {
-        setInstaHandleError("");
-      }
-
-    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // Set loading to true
+    setLoading(true);
     let final_result;
-    if (phonenumber.length === 11) {
+      if (phonenumber === "") {
+        setPhoneNumberError("required");
+        return;
+      } else if (phonenumber.length > 1 && phonenumber.length < 11) {
+        setPhoneNumberError("too short");
+        return;
+      } else {
       try {
         const result = await create_artisan(
           username,
@@ -171,19 +145,15 @@ export default function Multi() {
         final_result = result;
       } catch (error) {
         console.log(error);
-        setLoading(false); // Set loading to false in case of error
+        setLoading(false);
         return;
       }
 
       if (final_result.record) {
         navigate("/artisan/artisanaccountinformation");
       }
-    } else {
-      setPhoneNumberError("too short");
-      setLoading(false); // Set loading to false in case of validation error
-      return;
     }
-    setLoading(false); // Set loading to false when done
+    setLoading(false);
   };
 
   const [step, setSteps] = useState(1);
@@ -198,7 +168,11 @@ export default function Multi() {
       <div className="wraps">
         <form onSubmit={(e) => handleSubmit(e)}>
           <div className="progress_wrap">
-            <Progress totalSteps={totalSteps} step={step} className="progress" />
+            <Progress
+              totalSteps={totalSteps}
+              step={step}
+              className="progress"
+            />
             <div className={`${step >= 1 ? "circle active" : "circle"}`}>1</div>
             <div className={`${step >= 2 ? "circle active" : "circle"}`}>2</div>
             <div className={`${step >= 3 ? "circle active" : "circle"}`}>3</div>
@@ -207,7 +181,7 @@ export default function Multi() {
             {loading ? (
               <h4>Loading, please wait...</h4>
             ) : (
-              <>
+              <div>
                 {step === 1 && (
                   <div className="containers second-form">
                     <h1 className="header">Artisan Registration</h1>
@@ -249,11 +223,13 @@ export default function Multi() {
                         value={nameofartisan}
                         onChange={(e) => setNameOfArtisan(e.target.value)}
                         type="text"
-                        placeholder="Business name"
+                        placeholder="Bussiness name"
                         maxLength="16"
                       />
                       {nameofartisanError.length === 0 ? null : (
-                        <div className="error-message">{nameofartisanError}</div>
+                        <div className="error-message">
+                          {nameofartisanError}
+                        </div>
                       )}
                     </div>
 
@@ -263,8 +239,8 @@ export default function Multi() {
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                         type="text"
-                        placeholder="username"
-                        maxLength="20"
+                        placeholder="Username"
+                        maxLength="16"
                       />
                       {usernameError.length === 0 ? null : (
                         <div className="error-message">{usernameError}</div>
@@ -278,6 +254,7 @@ export default function Multi() {
                         onChange={(e) => setPassword(e.target.value)}
                         type="password"
                         placeholder="Password"
+                        minLength="8"
                       />
                       {passwordError.length === 0 ? null : (
                         <div className="error-message">{passwordError}</div>
@@ -285,12 +262,13 @@ export default function Multi() {
                     </div>
 
                     <div className="a-input_box">
-                      <FaLock className="a-input-icon" />
+                      <FaLock className="a-input-icon icon-active" />
                       <input
                         value={confirmpassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
                         type="password"
-                        placeholder="Confirm Password"
+                        placeholder=" Confirm Password"
+                        minLength="8"
                       />
                       {confirmPasswordError.length === 0 ? null : (
                         <div className="error-message">
@@ -298,40 +276,53 @@ export default function Multi() {
                         </div>
                       )}
                     </div>
+                    <div className="registers-link">
+                      <p>
+                        Already have an account?
+                        <span>
+                          <Link to="/artisanlogin"> Sign In</Link>
+                        </span>
+                      </p>
+                    </div>
                   </div>
                 )}
-
                 {step === 2 && (
-                  <div className="containers second-form">
+                  <div className="container second-form">
                     <h1 className="header">Artisan Registration</h1>
-                    <h3>Profile Information</h3>
-
-                    <div className="a-input_box">
+                    <h3>Skill Information</h3>
+                    <div className="artisan-category">
+                      <h4>
+                        Select Category <span className="text-danger">*</span>
+                      </h4>
                       <Dropdown selected={selected} setSelected={setSelected} />
                     </div>
 
                     <div className="artisan-description">
-                    <h4>
-                    Description <span className="text-danger">*</span>
-                  </h4>
-                      <input
+                      <h4>
+                        Description <span className="text-danger">*</span>
+                      </h4>
+                      <textarea
+                        placeholder="Describe what you do"
+                        required
                         value={description}
                         onChange={(e) => setDesription(e.target.value)}
-                        type="text"
-                        placeholder="Description of service"
-                        maxLength="250"
-                      />
+                      ></textarea>
                       {descriptionError.length === 0 ? null : (
                         <div className="error-message">{descriptionError}</div>
                       )}
                     </div>
 
                     <div className="artisan-address">
+                      <h4>
+                        Address <span className="text-danger">*</span>
+                      </h4>
                       <input
+                        type="text"
+                        name="address"
+                        placeholder="Enter your address"
+                        required
                         value={address}
                         onChange={(e) => setAddress(e.target.value)}
-                        type="text"
-                        placeholder="Address"
                       />
                       {addressError.length === 0 ? null : (
                         <div className="error-message">{addressError}</div>
@@ -339,87 +330,97 @@ export default function Multi() {
                     </div>
                   </div>
                 )}
-
                 {step === 3 && (
-                  <div className="containers third-form">
+                  <div className="container second-form">
                     <h1 className="header">Artisan Registration</h1>
                     <h3>Contact Information</h3>
-
-                    <div className="a-input_box">
-                      <input
-                        value={phonenumber}
-                        onChange={(e) => setPhoneNumber(e.target.value)}
-                        type="tel"
-                        placeholder="Phone Number"
-                        pattern="[0-9]{11}"
-                      />
-                      {phonenumberError.length === 0 ? null : (
-                        <div className="error-message">{phonenumberError}</div>
-                      )}
-                    </div>
-
-                    <div className="a-input_box">
-                      <input
-                        value={additionalphonenumber}
-                        onChange={(e) => setAdditionalPhoneNumber(e.target.value)}
-                        type="tel"
-                        placeholder="Additional Phone Number (optional)"
-                      />
-                      {additionalphonenumberError.length === 0 ? null : (
-                        <div className="error-message">
-                          {additionalphonenumberError}
+                    <div>
+                      <div className="artisan-number">
+                        <div>
+                          <label htmlFor="number">
+                            Phone Number <span className="text-danger">*</span>
+                          </label>
                         </div>
-                      )}
-                    </div>
+                        <input
+                          type="text"
+                          name="number"
+                          placeholder="Enter your phone number"
+                          maxLength={11}
+                          value={phonenumber}
+                          onChange={(e) => setPhoneNumber(e.target.value)}
+                        />
+                        {phonenumberError.length === 0 ? null : (
+                          <div className="error-message">
+                            {phonenumberError}
+                          </div>
+                        )}
+                      </div>
 
-                    <div className="a-input_box">
-                      <input
-                        value={whatsappnumber}
-                        onChange={(e) => setWhatsappNumber(e.target.value)}
-                        type="tel"
-                        placeholder="Whatsapp Number (optional)"
-                      />
-                      {whatsappnumberError.length === 0 ? null : (
-                        <div className="error-message">
-                          {whatsappnumberError}
+                      <div className="artisan-number">
+                        <div>
+                          <label htmlFor="number">
+                            Additional Phone Number{" "}
+                          </label>
                         </div>
-                      )}
-                    </div>
+                        <input
+                          type="text"
+                          name="number"
+                          placeholder="Enter your phone number"
+                          maxLength={11}
+                        />
+                      </div>
 
-                    <div className="a-input_box">
-                      <input
-                        value={instahandle}
-                        onChange={(e) => setInstaHandle(e.target.value)}
-                        type="text"
-                        placeholder="Instagram Handle (optional)"
-                      />
-                      {instahandleError.length === 0 ? null : (
-                        <div className="error-message">{instahandleError}</div>
-                      )}
+                      <div className="socials">
+                        <p>Social Media (Optional)</p>
+                        <div className="artisan-whatsapp">
+                          <div>
+                            <label htmlFor="whatsapp">Whatsapp Contact</label>
+                          </div>
+                          <input
+                            type="text"
+                            name="whatsapp_number"
+                            placeholder="Enter whatsapp number"
+                            maxLength={11}
+                          />
+                        </div>
+
+                        <div className="artisan-insta-handle">
+                          <div>
+                            <label htmlFor="instagram">Instagram Handle</label>
+                          </div>
+                          <input
+                            type="text"
+                            name="insta_handle"
+                            placeholder="Enter instagram handle"
+                            value={instahandle}
+                            onChange={(e) => setInstaHandle(e.target.value)}
+                          />
+                        </div>
+                      </div>
                     </div>
                   </div>
                 )}
-              </>
+              </div>
             )}
           </div>
           <div className="buttns">
-          <button
-            className={`${step <= 1 ? "disabled" : "btn-s"}`}
-            onClick={handlePrev}
-          >
-            prev <FaArrowLeft />
-          </button>
+            <button
+              className={`${step <= 1 ? "disabled" : "btn-s"}`}
+              onClick={handlePrev}
+            >
+              prev <FaArrowLeft />
+            </button>
 
-          {step === 3 ? (
-            <button type="submit" className="btn-s">
-              Submit
-            </button>
-          ) : (
-            <button onClick={handleNext} className="btn-s">
-              Next <FaArrowRight />
-            </button>
-          )}
-        </div>
+            {step === 3 ? (
+              <button type="submit" className="btn-s">
+                Submit
+              </button>
+            ) : (
+              <button onClick={handleNext} className="btn-s">
+                Next <FaArrowRight />
+              </button>
+            )}
+          </div>
         </form>
       </div>
     </>
