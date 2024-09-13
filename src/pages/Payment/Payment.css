@@ -1,86 +1,109 @@
 .all-content {
-    padding: 2% 16px;
+  padding: 2% 16px;
+  margin-bottom: 50px;
 }
 
 .all-content h1 {
-    text-align: center;
+  text-align: center;
 }
 
-.intro p {
-    font-size: 0.7rem;
-    padding: 3%;
+.back svg,
+.back p {
+  font-size: 0.8rem;
 }
 
-.pay-for p {
-    font-size: 0.9rem;
+.form-groups {
+  margin-top: 20px;
 }
 
-.location p {
-    font-size: 0.9rem;
-    padding: 1.5%;
-    background-color: #e0e0e0;
-    border-radius: 5px;
+.form-groups .username,
+.form-groups .email,
+.form-groups .phone-number,
+.form-groups .amount {
+  display: flex;
+  justify-content: center;
 }
 
-.back svg, .back p {
-    font-size: 0.8rem;
+.form-groups .username input,
+.form-groups .email input,
+.form-groups .phone-number input,
+.form-groups .amount input {
+  padding: 2% 16px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  width: 100%;
 }
-
 
 @media (min-width: 768px) {
-    .intro p {
-        font-size: 1rem;
-        padding: 2% 4%;
-    }
+  .intro p {
+    font-size: 1rem;
+    padding: 2% 4%;
+  }
 
-    .pay-for p {
-        font-size: 1.2rem;
-        padding: 0.4% 7px;
-    }
+  .back svg,
+  .back p {
+    font-size: 1.2rem;
+  }
 
-    .location p {
-        font-size: 1.2rem;
-    }
 
-    .back svg, .back p {
-        font-size: 1.2rem;
-    }
+.form-groups .username input,
+.form-groups .email input,
+.form-groups .phone-number input,
+.form-groups .amount input {
+    width: 50%;
+    font-size: 1.1rem;
+  }
+
+  .pay {
+    padding: 0 15%;
+  }
+
+  .pay-btn {
+    font-size: 1.5rem;
+  }
 }
 
 @media (min-width: 1024px) {
-    .intro p {
-        font-size: 1.2rem;
-    }
+  .intro p {
+    font-size: 1.2rem;
+  }
 
-    .pay-for p {
-        font-size: 1.4rem;
-    }
+  .pay-for p {
+    font-size: 1.4rem;
+  }
 
-    .location p {
-        font-size: 1.4rem;
-    }
+  .back svg,
+  .back p {
+    font-size: 1.4rem;
+  }
 
-    .back svg, .back p {
-        font-size: 1.4rem;
-    }
+  .form-groups .username input,
+  .form-groups .email input,
+  .form-groups .phone-number input,
+  .form-groups .amount input {
+    font-size: 1.2rem;
+  }
 }
 
 @media (min-width: 1440px) {
-    .intro p {
-        font-size: 1.6rem;
-    }
+  .intro p {
+    font-size: 1.6rem;
+  }
 
-    .pay-for p {
-        font-size: 1.8rem;
-        padding: 0.4% 30px;
-    }
+  .pay-for p {
+    font-size: 1.8rem;
+    padding: 0.4% 30px;
+  }
 
-    .location p {
-        font-size: 1.8rem;
-        padding: 0.4% 30px;
-    }
+  .back svg,
+  .back p {
+    font-size: 1.8rem;
+  }
 
-    .back svg, .back p {
-        font-size: 1.8rem;
-    }
+  .form-groups .username input,
+  .form-groups .email input,
+  .form-groups .phone-number input,
+  .form-groups .amount input {
+    font-size: 1.3rem;
+  }
 }

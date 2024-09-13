@@ -6,8 +6,23 @@ import "../../pages/SkillorServiceDetails/Details.css";
 import Artisandetailsfooter from "../../components/ArtisanDetails/Artisandetailsfooter";
 import { RiSecurePaymentLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { reviews } from "../../lib/pocketbase";
+import { useUserData } from "../../hooks/useUserDate";
+import { useArtisanData } from "../../hooks/useArtisanData";
 
 const Details = () => {
+  const {datas} =useArtisanData()
+  const {data } = useUserData()
+  const [rate, setRate] = useState(0);
+  const [review, setReview] = useState("");
+
+  async function handleSubmit(e){
+    if(data !== undefined){
+      e.preventDefault();
+      reviews(review, rate);
+    }
+  };
   return (
     <>
       <Navbar />
@@ -36,7 +51,7 @@ const Details = () => {
 
               <div className="dets">
                 <div className="col-md-9 skillinfo">
-                  <h1>Gen Doctor</h1>
+                  <h1>{datas?.name_of_business}</h1>
                   <div className="d-flex align-items-center mb-4">
                     <Rating
                       // name={rating}
@@ -53,11 +68,21 @@ const Details = () => {
                     </p>
                   </div>
                   <div className="contact-artisan">
-                    <p>Phone Number: <span>+(234) 8135854955</span></p>
-                    <p>Whatsapp Contact: <span>08135854955</span></p>
-                    <p>Instagram Handle: <span>GEn_DocTOR</span></p>
+                    <p>
+                      Phone Number: <span>+(234) 8135854955</span>
+                    </p>
+                    <p>
+                      Whatsapp Contact: <span>08135854955</span>
+                    </p>
+                    <p>
+                      Instagram Handle: <span>GEn_DocTOR</span>
+                    </p>
                   </div>
-                  <Link to="/paymentpage"><button className="btn">Pay for services <RiSecurePaymentLine /></button></Link>
+                  <Link to="/paymentpage">
+                    <button className="btn">
+                      Pay for services <RiSecurePaymentLine />
+                    </button>
+                  </Link>
                   <p className="text-bg des">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Tempore excepturi quibusdam alias magni ipsam, perspiciatis
@@ -69,23 +94,31 @@ const Details = () => {
                 <div className="col-md-9 skillinfo rateandcomment">
                   <h4>Rating and Comments</h4>
 
-                  <div className="rate-artisan">
-                  <h4>Rate Artisan</h4>
-                  <div className=" d-flex align-items-center mb-3 stars">
-                    <p><Rating defaultValue={0} /></p>
-                  </div>
-                  </div>
+                  <form onSubmit={(e) => handleSubmit(e)}>
+                    <div className="rate-artisan">
+                      <h4>Rate Artisan</h4>
+                      <div className=" d-flex align-items-center mb-3 stars">
+                        <p>
+                          <Rating
+                            value={rate}
+                            onChange={(e) => setRate(e.target.value)}
+                          />{" "}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="comments-section">
+                      <label>What was your experience with this artisan?</label>
+                      <textarea
+                        placeholder="Leave a comment..."
+                        value={review}
+                        onChange={(e) => setReview(e.target.value)}
+                      ></textarea>
 
-                  <div className="comments-section">
-                    <form>
-                    <label>What was your experience with this artisan?</label>
-                    <textarea placeholder="Leave a comment..." required></textarea>
-                    <button type="submit" className="btn">Submit</button>
-                    </form>
-                    
-                  </div>
-
-                
+                      <button type="submit" className="btn">
+                        Submit
+                      </button>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>

@@ -1,7 +1,7 @@
 import PocketBase from "pocketbase";
 
-// export const pb = new PocketBase("http://127.0.0.1:8090");
-export const pb = new PocketBase("https://service-konnect.pockethost.io/");
+export const pb = new PocketBase("http://127.0.0.1:8090");
+// export const pb = new PocketBase("https://service-konnect.pockethost.io/");
 
 export async function create_user(
   firstname,
@@ -70,9 +70,7 @@ const record = await pb
 
 export async function artisan_info() {
   const id = pb.authStore.model.id
-  const record = await pb.collection('artisan').getOne(id, {
-    expand: 'relField1,relField2.subRelField',
-});
+  const record = await pb.collection('artisan').getOne(id);
 return record
 }
 
@@ -81,5 +79,17 @@ export async function login_artisan(username, password) {
     username,
     password,
 );
+return record
+}
+
+export async function reviews(review, rate) {
+  const userid = pb.authStore.model.id
+  const data = {
+    "review": review,
+    "rate": rate,
+    "user": userid
+};
+
+const record = await pb.collection('review').create(data);
 return record
 }

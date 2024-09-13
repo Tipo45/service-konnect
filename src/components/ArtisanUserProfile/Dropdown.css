@@ -1,6 +1,7 @@
 .dropdown {
     width: 300px;
     user-select: none;
+    z-index: 99;
 }
 
 .dropdown .dropdown-btn {

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "../../components/Skillorproducts/Art.css";
 import { FaRegStar } from "react-icons/fa";
+import { Rating } from "@mui/material";
 
 const Tailors = () => {
   return (
@@ -21,21 +22,7 @@ const Tailors = () => {
                   </div>
                   <div className="ratings">
                     <p>
-                      <span>
-                        <FaRegStar />
-                      </span>
-                      <span>
-                        <FaRegStar />
-                      </span>
-                      <span>
-                        <FaRegStar />
-                      </span>
-                      <span>
-                        <FaRegStar />
-                      </span>
-                      <span>
-                        <FaRegStar />
-                      </span>
+                      <Rating />
                     </p>
                   </div>
                   <div>

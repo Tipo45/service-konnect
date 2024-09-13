@@ -21,7 +21,7 @@ const Artisanaccinfo = () => {
 
         <div className="form-group">
           <label htmlFor="lastname">Last Name</label>
-          <div className="displayed"></div>
+          <div className="displayed">{data?.last_name}</div>
         </div>
 
         <div className="form-group">
@@ -31,17 +31,17 @@ const Artisanaccinfo = () => {
 
         <div className="form-group">
           <label htmlFor="phone">Phone/Mobile</label>
-          <div className="displayed"></div>
+          <div className="displayed">{data?.phone_number}</div>
         </div>
 
         <div className="form-group">
           <label htmlFor="businessname">Business Name</label>
-          <div className="displayed"></div>
+          <div className="displayed">{data?.name_of_business}</div>
         </div>
 
         <div className="form-group">
           <label htmlFor="address">Address</label>
-          <div className="displayed"></div>
+          <div className="displayed">{data?.address}</div>
         </div>
       </div>
     </div>

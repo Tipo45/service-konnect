@@ -9,16 +9,17 @@ const Logform = () => {
   const [password, setPassword] = useState("");
   const [usernameError, setUsernameError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const [loginError, setLoginError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true); 
-    let finalresult;
+    setLoginError(""); // Clear any previous login errors
 
     if (username === "") {
-      setUsernameError("username required");
+      setUsernameError("Username required");
       setLoading(false);
       return;
     } else {
@@ -26,7 +27,7 @@ const Logform = () => {
     }
 
     if (password === "") {
-      setPasswordError("password required");
+      setPasswordError("Password required");
       setLoading(false); 
       return;
     } else {
@@ -36,15 +37,13 @@ const Logform = () => {
     if (!usernameError && !passwordError) {
       try {
         const result = await login(username, password);
-        finalresult = result;
+
+        if (result.record) {
+          navigate("/client/accountinformation");
+        } 
       } catch (error) {
         console.log(error);
-        setLoading(false); 
-        return;
-      }
-
-      if (finalresult.record) {
-        navigate("/client/accountinformation");
+        setLoginError("Incorrect login details");
       }
     }
 
@@ -69,6 +68,8 @@ const Logform = () => {
             <form onSubmit={(e) => handleSubmit(e)}>
               <h1>Client Login</h1>
 
+              {loginError && <div className="error-message">{loginError}</div>}
+
               <div className="input-box">
                 <FaUserAlt className="icon" />
                 <input
@@ -78,7 +79,7 @@ const Logform = () => {
                   onChange={(e) => setUsername(e.target.value)}
                   maxLength="16"
                 />
-                {usernameError.length === 0 ? null : (
+                {usernameError && (
                   <div className="error-message">{usernameError}</div>
                 )}
               </div>
@@ -92,7 +93,7 @@ const Logform = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   minLength="8"
                 />
-                {passwordError.length === 0 ? null : (
+                {passwordError && (
                   <div className="error-message">{passwordError}</div>
                 )}
               </div>
@@ -101,7 +102,7 @@ const Logform = () => {
                 <Link to="#">Forgot Password?</Link>
               </div>
 
-              <button type="submit" className="btn">
+              <button type="submit" className="btn" disabled={loading}>
                 Login
               </button>
 

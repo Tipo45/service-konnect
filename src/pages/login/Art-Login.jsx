@@ -5,29 +5,30 @@ import { useState } from "react";
 import "../../pages/login/Login.css";
 
 const ArtisanLogin = () => {
-  const [username, setusername] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [usernameError, setusernameError] = useState("");
+  const [usernameError, setUsernameError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [loginError, setLoginError] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); 
-    let final_result;
+    setLoading(true);
+    setLoginError("");
 
     if (username === "") {
-      setusernameError("username required");
-      setLoading(false); 
+      setUsernameError("username required");
+      setLoading(false);
       return;
     } else {
-      setusernameError("");
+      setUsernameError("");
     }
 
     if (password === "") {
       setPasswordError("password required");
-      setLoading(false); 
+      setLoading(false);
       return;
     } else {
       setPasswordError("");
@@ -36,19 +37,17 @@ const ArtisanLogin = () => {
     if (!usernameError && !passwordError) {
       try {
         const result = await login_artisan(username, password);
-        final_result = result;
+
+        if (result.record) {
+          navigate("/artisan/artisanaccountinformation");
+        } 
       } catch (error) {
         console.log(error);
-        setLoading(false); 
-        return;
-      }
-
-      if (final_result.record) {
-        navigate("/artisan/artisanaccountinformation");
+        setLoginError("Incorrect login details");
       }
     }
 
-    setLoading(false); 
+    setLoading(false);
   };
 
   return (
@@ -69,18 +68,18 @@ const ArtisanLogin = () => {
             <form onSubmit={(e) => handleSubmit(e)}>
               <h1>Artisan Login</h1>
 
+              {loginError && <div className="error-message">{loginError}</div>}
+
               <div className="input-box">
                 <FaUserAlt className="icon" />
                 <input
                   type="text"
                   placeholder="Username"
                   value={username}
-                  onChange={(e) => setusername(e.target.value)}
+                  onChange={(e) => setUsername(e.target.value)}
                   maxLength="16"
                 />
-                {usernameError.length === 0 ? null : (
-                  <div className="error-message">{usernameError}</div>
-                )}
+                {usernameError && <div className="error-message">{usernameError}</div>}
               </div>
 
               <div className="input-box">
@@ -92,16 +91,14 @@ const ArtisanLogin = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   minLength="8"
                 />
-                {passwordError.length === 0 ? null : (
-                  <div className="error-message">{passwordError}</div>
-                )}
+                {passwordError && <div className="error-message">{passwordError}</div>}
               </div>
 
               <div className="forgot-pass">
                 <Link to="#">Forgot Password?</Link>
               </div>
 
-              <button type="submit" className="btn">
+              <button type="submit" className="btn" disabled={loading}>
                 Login
               </button>
               <div className="register-link">
