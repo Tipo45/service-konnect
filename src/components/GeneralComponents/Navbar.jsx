@@ -1,16 +1,45 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../GeneralComponents/GeneralComponent.css";
 import { FaBars } from "react-icons/fa6";
 import { FaInstagram, FaTimes, FaTwitter, FaWhatsapp } from "react-icons/fa";
+import { checkAuth, getCurrentUser } from "../../lib/pocketbase";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userRole, setUserRole] = useState(null);
+
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  useEffect(() => {
+    const checkUserStatus = async () => {
+      const isAuthenticated = checkAuth();
+      setIsLoggedIn(isAuthenticated);
+
+      if(isAuthenticated) {
+        const user = await getCurrentUser();
+        setUserRole(user.role)
+      }
+    };
+
+    checkUserStatus();
+  }, []);
+
+  const getAccountPage = () => {
+    if (userRole === "artisan") {
+      return "/artisan/accountinformation";
+    } else if (userRole === "client") {
+      return "/client/accountinformation";
+    } 
+    else {
+      return "/login"
+    }
+  };
+  
   return (
     <>
       <header>
@@ -39,10 +68,14 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link className="nodeco" to="/login">
+               {isLoggedIn ?(<Link className="nodeco" to={getAccountPage()}>
+                  My account
+                </Link>) : (<Link className="nodeco" to="/login">
                   Login
-                </Link>
+                </Link>)}
               </li>
+
+              
 
               <div className="sidebar">
                 <div className="social-links">

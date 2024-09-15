@@ -9,6 +9,7 @@ import { logout } from "../../lib/pocketbase";
 // eslint-disable-next-line react/prop-types
 const UserSidebar = ({ activepage }) => {
   const navigate = useNavigate();
+
   return (
     <div className="usersidebar">
       {activepage === "accountinformation" ? (
@@ -84,7 +85,7 @@ const UserSidebar = ({ activepage }) => {
       {
         
           <div className="s1">
-            <button onClick={() => {logout(),navigate("/login") }} className="text-dark btns">
+            <button onClick={() => {logout() ,navigate("/login") }} className="text-dark btns">
             <IoPower className="text-danger" /> Logout</button>
           </div>
       }

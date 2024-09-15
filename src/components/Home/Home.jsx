@@ -19,7 +19,7 @@ const Home = () => {
             <div className="steps-container-content">
               <Link to="/productsandservices/tailors">
                 <div className="category">
-                  <img src={tailorimage} alt="Tailoring Service category" />
+                  <img src={tailorimage} alt="Tailoring Service" />
                   <div className="main-category-content">
                     <div className="category-text">
                       <h3>Tailoring Services</h3>
@@ -30,7 +30,7 @@ const Home = () => {
 
               <Link to="/productsandservices/autotechnicians">
                 <div className="category">
-                  <img src={autorepairimage} alt="Auto repair category" />
+                  <img src={autorepairimage} alt="Auto repair" />
                   <div className="main-category-content">
                     <div className="category-text">
                       <h3>Auto Repair Services</h3>
@@ -43,7 +43,7 @@ const Home = () => {
                 <div className="category">
                   <img
                     src={electricalimage}
-                    alt="Electrical Service Category"
+                    alt="Electrical Service"
                   />
                   <div className="main-category">
                     <div className="category-text">
@@ -66,7 +66,7 @@ const Home = () => {
 
               <Link to="/productsandservices/caterers">
                 <div className="category">
-                  <img src={caterersimage} alt="Catering Services" />
+                  <img src={caterersimage} alt="Caterers" />
                   <div className="category-rows">
                     <div className="category-text">
                       <h3>Catering Services</h3>
@@ -80,7 +80,7 @@ const Home = () => {
                   <img src={buildingandconstructionimage} alt="Building and Construction" />
                   <div className="category-rows">
                     <div className="category-text">
-                      <h3>Building/Construction</h3>
+                      <h3>Building and Construction</h3>
                     </div>
                   </div>
                 </div>

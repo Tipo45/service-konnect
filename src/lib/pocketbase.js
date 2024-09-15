@@ -1,7 +1,7 @@
 import PocketBase from "pocketbase";
 
-export const pb = new PocketBase("http://127.0.0.1:8090");
-// export const pb = new PocketBase("https://service-konnect.pockethost.io/");
+// export const pb = new PocketBase("http://127.0.0.1:8090");
+export const pb = new PocketBase("https://service-konnect.pockethost.io/");
 
 export async function create_user(
   firstname,
@@ -15,7 +15,8 @@ export async function create_user(
     last_name: lastname,
     username: username,
     password: password,
-    passwordConfirm: confirmpassword
+    passwordConfirm: confirmpassword,
+    client: true
   };
   await pb.collection("users").create(data);
   const record = await pb
@@ -45,6 +46,31 @@ export function logout() {
   pb.authStore.clear();
 }
 
+export const checkAuth = () => {
+  return pb.authStore.isValid;  // returns true if a user is logged in
+}
+
+export async function getCurrentUser() {
+  if(!pb.authStore.isValid) {
+    return null;
+  }
+
+  try {
+    const user = pb.authStore.model;
+
+    const userRole = user.artisan;
+
+    return {
+      user,
+      role: userRole
+    };
+  } catch(error) {
+    console.error('Error fetching current user', error);
+    return null;
+  }
+  
+}
+
 export async function create_artisan( username, password, confirmpassword, firstname, lastname, description, address, nameofartisan, phonenumber, additionalphonenumber, whatsappnumber, instahandle) {
   const data = {
     "username": username,
@@ -58,7 +84,8 @@ export async function create_artisan( username, password, confirmpassword, first
     "phone_number": phonenumber,
     "additional_phone_number": additionalphonenumber,
     "whatsapp_number": whatsappnumber,
-    "insta_handle": instahandle
+    "insta_handle": instahandle,
+    "artisan": true
 };
 
 await pb.collection('artisan').create(data);
