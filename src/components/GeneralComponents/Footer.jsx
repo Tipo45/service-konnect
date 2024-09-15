@@ -48,22 +48,22 @@ const Footer = () => {
               <h4>Connect With Us</h4>
               <div className="socialmedia">
                 <p>
-                  <Link href="https://wa.me/2348135854955">
+                  <Link to="https://wa.me/2348135854955">
                     <FaWhatsapp />
                   </Link>
                 </p>
                 <p>
-                  <Link href="">
+                  <Link to="">
                     <FaXTwitter />
                   </Link>
                 </p>
                 <p>
-                  <Link href="">
+                  <Link to="">
                     <FaTelegramPlane />
                   </Link>
                 </p>
                 <p>
-                  <Link href="">
+                  <Link to="">
                     <FaSnapchat />
                   </Link>
                 </p>
@@ -99,6 +99,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+
 
       <div className="small_footer">
         <div className="container-fluid">

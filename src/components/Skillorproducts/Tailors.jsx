@@ -13,7 +13,7 @@ const Tailors = () => {
             <div className="arts-content">
               <div className="art-category">
                 <img
-                  src="https://media.istockphoto.com/id/1465634394/photo/african-dressmaking-entrepreneur.jpg?s=612x612&w=is&k=20&c=l6oByiOnw8U_T5Y6lcoWe7Zb-a7wWr_p_2IzSkWmUzk="
+                  src=""
                   alt=""
                 />
                 <div className="arts-content-content">

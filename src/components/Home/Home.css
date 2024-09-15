@@ -25,9 +25,10 @@
 }
 
 .category img {
-  height: auto;
-  width: 100%;
-  max-width: 120px;
+  height: 150px;
+  width: 150px;
+  border-radius: 5px;
+  max-width: 100%;
   margin-bottom: 1.2rem;
 }
 
@@ -100,6 +101,10 @@
     padding: 5% 7px;
   }
 
+  .category img {
+    width: 200px;
+  }
+
   .category h3 {
     padding: 5px 2%;
     width: 180px;
@@ -122,8 +127,8 @@
     padding: 5% 7px;
   }
 
-  .category img  {
-    max-width: 200px;
+  .category img {
+    width: 300px;
   }
 
   .category h3 {
