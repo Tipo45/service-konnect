@@ -7,10 +7,38 @@ import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import HomeIcon from "@mui/icons-material/Home";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { checkAuth, getCurrentUser } from "../../lib/pocketbase";
 
 const Footer = () => {
   const [value, setValue] = useState(0);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userRole, setUserRole] = useState(null);
+
+  useEffect(() => {
+    const checkUserStatus = async () => {
+      const isAuthenticated = checkAuth();
+      setIsLoggedIn(isAuthenticated);
+
+      if(isAuthenticated) {
+        const user = await getCurrentUser();
+        setUserRole(user.role)
+      }
+    };
+
+    checkUserStatus();
+  }, []);
+
+  const getAccountPage = () => {
+    if (userRole === "artisan") {
+      return "/artisan/accountinformation";
+    } else if (userRole === "client") {
+      return "/client/accountinformation";
+    } 
+    else {
+      return "/login"
+    }
+  };
 
   return (
     <div className="footer">
@@ -105,7 +133,7 @@ const Footer = () => {
         <div className="container-fluid">
           <BottomNavigation
             className="bottom-nav"
-            showLabels
+            
             value={value}
             onChange={(event, newValue) => {
               setValue(newValue);
@@ -120,12 +148,17 @@ const Footer = () => {
                 icon={<FormatListBulletedIcon />}
               />
             </Link>
-            <Link to="/login">
+            {isLoggedIn ? (<Link to={getAccountPage()}>
               <BottomNavigationAction
                 label="Account"
                 icon={<AccountCircleIcon />}
               />
-            </Link>
+            </Link>) :(<Link to="/login">
+              <BottomNavigationAction
+                label="Account"
+                icon={<AccountCircleIcon />}
+              />
+            </Link>)}
           </BottomNavigation>
         </div>
       </div>
