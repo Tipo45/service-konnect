@@ -11,12 +11,13 @@ export async function create_user(
   confirmpassword
 ) {
   const data = {
-    first_name: firstname,
-    last_name: lastname,
-    username: username,
-    password: password,
-    passwordConfirm: confirmpassword,
-    client: true
+    "first_name": firstname,
+    "last_name": lastname,
+    "username": username,
+    "password": password,
+    "passwordConfirm": confirmpassword,
+    
+
   };
   await pb.collection("users").create(data);
   const record = await pb
@@ -55,18 +56,20 @@ export async function getCurrentUser() {
     return null;
   }
 
-  try {
-    const user = pb.authStore.model;
-
-    const userRole = user.artisan;
-
-    return {
-      user,
-      role: userRole
-    };
-  } catch(error) {
-    console.error('Error fetching current user', error);
-    return null;
+  else {
+    try {
+      const user = pb.authStore.model;
+  
+      const userRole = user.artisan;
+  
+      return {
+        user,
+        role: userRole
+      };
+    } catch(error) {
+      console.error('Error fetching current user', error);
+      return null;
+    }
   }
   
 }

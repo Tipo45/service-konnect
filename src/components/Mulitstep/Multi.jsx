@@ -359,7 +359,7 @@ export default function Multi() {
                       <div className="artisan-number">
                         <div>
                           <label htmlFor="number">
-                            Additional Phone Number{" "}
+                            Additional Phone Number
                           </label>
                         </div>
                         <input
@@ -367,6 +367,8 @@ export default function Multi() {
                           name="number"
                           placeholder="Enter your phone number"
                           maxLength={11}
+                          value={additionalphonenumber}
+                            onChange={(e) => setAdditionalPhoneNumber(e.target.value)}
                         />
                       </div>
 
@@ -381,6 +383,8 @@ export default function Multi() {
                             name="whatsapp_number"
                             placeholder="Enter whatsapp number"
                             maxLength={11}
+                            value={whatsappnumber}
+                            onChange={(e) => setWhatsappNumber(e.target.value)}
                           />
                         </div>
 

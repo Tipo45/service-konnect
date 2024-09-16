@@ -11,17 +11,14 @@ const Tailors = () => {
           <section className="container">
             <div className="arts-content">
               <div className="art-category">
-                <img
-                  src=""
-                  alt=""
-                />
+                <img src="" alt="" />
                 <div className="arts-content-content">
                   <div className="price">
                     <p>₦10,000</p>
                   </div>
                   <div className="ratings">
                     <p>
-                      <Rating />
+                      <Rating defaultValue={4.0} precision={0.5} readOnly />
                     </p>
                   </div>
                   <div>

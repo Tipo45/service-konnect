@@ -18,7 +18,7 @@ const Art = () => {
                   </div>
                   <div className="ratings">
                     <p>
-                      <Rating />
+                      <Rating defaultValue={4.0} precision={0.5} readOnly />
                     </p>
                   </div>
                   <div>

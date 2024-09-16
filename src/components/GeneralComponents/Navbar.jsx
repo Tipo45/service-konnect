@@ -22,7 +22,7 @@ const Navbar = () => {
 
       if(isAuthenticated) {
         const user = await getCurrentUser();
-        setUserRole(user.role)
+        setUserRole(user.artisan)
       }
     };
 
@@ -32,11 +32,8 @@ const Navbar = () => {
   const getAccountPage = () => {
     if (userRole === "artisan") {
       return "/artisan/accountinformation";
-    } else if (userRole === "client") {
-      return "/client/accountinformation";
-    } 
-    else {
-      return "/login"
+    } else {
+      return "/client/accountinformation"
     }
   };
   

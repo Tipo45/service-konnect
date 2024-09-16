@@ -5,6 +5,7 @@ import { FaXTwitter, FaSnapchat } from "react-icons/fa6";
 import BottomNavigation from "@mui/material/BottomNavigation";
 import BottomNavigationAction from "@mui/material/BottomNavigationAction";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import PersonPinIcon from '@mui/icons-material/PersonPin';
 import HomeIcon from "@mui/icons-material/Home";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import { useEffect, useState } from "react";
@@ -15,6 +16,7 @@ const Footer = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userRole, setUserRole] = useState(null);
 
+
   useEffect(() => {
     const checkUserStatus = async () => {
       const isAuthenticated = checkAuth();
@@ -22,7 +24,7 @@ const Footer = () => {
 
       if(isAuthenticated) {
         const user = await getCurrentUser();
-        setUserRole(user.role)
+        setUserRole(user.artisan)
       }
     };
 
@@ -32,11 +34,8 @@ const Footer = () => {
   const getAccountPage = () => {
     if (userRole === "artisan") {
       return "/artisan/accountinformation";
-    } else if (userRole === "client") {
-      return "/client/accountinformation";
-    } 
-    else {
-      return "/login"
+    } else {
+      return "/client/accountinformation"
     }
   };
 
@@ -133,7 +132,6 @@ const Footer = () => {
         <div className="container-fluid">
           <BottomNavigation
             className="bottom-nav"
-            
             value={value}
             onChange={(event, newValue) => {
               setValue(newValue);
@@ -151,10 +149,8 @@ const Footer = () => {
             {isLoggedIn ? (<Link to={getAccountPage()}>
               <BottomNavigationAction
                 label="Account"
-                icon={<AccountCircleIcon />}
-              />
-            </Link>) :(<Link to="/login">
-              <BottomNavigationAction
+                icon={<PersonPinIcon />}
+              /></Link>) : (<Link to="/login"> <BottomNavigationAction
                 label="Account"
                 icon={<AccountCircleIcon />}
               />

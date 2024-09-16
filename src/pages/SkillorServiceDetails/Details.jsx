@@ -1,7 +1,6 @@
 import { Rating } from "@mui/material";
 import Carousel from "react-bootstrap/Carousel";
 import Navbar from "../../components/GeneralComponents/Navbar";
-import slider1 from "../../assets/images/Neon_06.jpg";
 import "../../pages/SkillorServiceDetails/Details.css";
 import Artisandetailsfooter from "../../components/ArtisanDetails/Artisandetailsfooter";
 import { RiSecurePaymentLine } from "react-icons/ri";
@@ -22,6 +21,7 @@ const Details = () => {
       e.preventDefault();
       reviews(review, rate);
     }
+    window.location.reload();
   };
   return (
     <>
@@ -35,15 +35,16 @@ const Details = () => {
                   <Carousel slide={false} className="image-slider">
                     <Carousel.Item>
                       <img
-                        src="https://media.istockphoto.com/id/1469723771/photo/coffee-shop-senior-woman-manager-portrait-with-barista-feeling-happy-about-shop-success.jpg?s=2048x2048&w=is&k=20&c=6nFUMicgP2sX5bwQyCVn8AsHF809nbb6IqFWmbS_pmc="
+                        src
+                        alt="artisan image"
                         className=" slider-images"
                       />
                     </Carousel.Item>
                     <Carousel.Item>
-                      <img src={slider1} className=" slider-images" />
+                      <img src alt="artisan image" className=" slider-images" />
                     </Carousel.Item>
                     <Carousel.Item>
-                      <img src={slider1} className=" slider-images" />
+                      <img src alt="artisan image" className=" slider-images" />
                     </Carousel.Item>
                   </Carousel>
                 </div>
@@ -102,7 +103,7 @@ const Details = () => {
                           <Rating
                             value={rate}
                             onChange={(e) => setRate(e.target.value)}
-                          />{" "}
+                          />
                         </p>
                       </div>
                     </div>

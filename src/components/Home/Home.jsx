@@ -6,7 +6,7 @@ import plumberimage from "../../assets/images/image2.webp";
 import caterersimage from "../../assets/images/image16.webp";
 import buildingandconstructionimage from "../../assets/images/image9.webp";
 import Artsimage from "../../assets/images/image11.webp";
-import Othercategoriesimage from "../../assets/images/Neon_06.jpg";
+import Othercategoriesimage from "../../assets/images/Neon_06_1_optimized.webp";
 import { Link } from "react-router-dom";
 
 const Home = () => {
