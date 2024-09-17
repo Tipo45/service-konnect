@@ -47,26 +47,6 @@ export function logout() {
 
 
 
-// export async function checkAuth() {
-//   const isAuthenticated = pb.authStore.isValid;
-
-//   if (isAuthenticated) {
-//     const user = await getCurrentUser();
-
-//     if (user && user.artisan === true) {
-//       // The user is an artisan
-//       return { isAuthenticated: true, role: "artisan" };
-//     } else if (user) {
-//       // The user is a client
-//       return { isAuthenticated: true, role: "client" };
-//     }
-//   }
-
-//   return { isAuthenticated: false };
-// }
-
-
-
 export async function create_artisan(
   username,
   password,
@@ -116,40 +96,6 @@ export async function login_artisan(username, password) {
     .authWithPassword(username, password);
   return record;
 }
-
-// export async function getCurrentUser() {
-//   if (!pb.authStore.isValid) {
-//     return null;
-//   } else {
-//     try {
-//       const user = pb.authStore.model;
-
-//       const userRole = user.artisan;
-
-//       return {
-//         user,
-//         role: userRole,
-//       };
-//     } catch (error) {
-//       console.error("Error fetching current user", error);
-//       return null;
-//     }
-//   }
-// }
-
-// export async function checkAuth() {
-//   const isAuthenticated = pb.authStore.isValid;
-
-//   if (isAuthenticated) {
-//     const user = await getCurrentUser();
-//     return {
-//       isAuthenticated: true,
-//       role: user.artisan ? 'artisan' : 'client', // Ensure this line properly sets the role
-//     };
-//   }
-
-//   return { isAuthenticated: false, role: null };
-// }
 
 export async function checkAuth() {
   if (pb.authStore.isValid) {

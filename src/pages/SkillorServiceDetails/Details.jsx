@@ -1,5 +1,4 @@
 import { Rating } from "@mui/material";
-import Carousel from "react-bootstrap/Carousel";
 import Navbar from "../../components/GeneralComponents/Navbar";
 import "../../pages/SkillorServiceDetails/Details.css";
 import Artisandetailsfooter from "../../components/ArtisanDetails/Artisandetailsfooter";
@@ -8,9 +7,12 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { reviews } from "../../lib/pocketbase";
 import { useUserData } from "../../hooks/useUserDate";
+// import { useArtisanData } from "../../hooks/useArtisanData";
+import artisanimage from "../../assets/images/image10.webp"
 
 const Details = () => {
-  const {data } = useUserData()
+  // const {info} =useArtisanData()
+  const {data} = useUserData()
   const [rate, setRate] = useState(0);
   const [review, setReview] = useState("");
 
@@ -30,27 +32,13 @@ const Details = () => {
             <div className="row rows">
               <div className="col-md-11 d-flex align-items-center">
                 <div className="skillimage">
-                  <Carousel slide={false} className="image-slider">
-                    <Carousel.Item>
-                      <img
-                        src
-                        alt="artisan image"
-                        className=" slider-images"
-                      />
-                    </Carousel.Item>
-                    <Carousel.Item>
-                      <img src alt="artisan image" className=" slider-images" />
-                    </Carousel.Item>
-                    <Carousel.Item>
-                      <img src alt="artisan image" className=" slider-images" />
-                    </Carousel.Item>
-                  </Carousel>
+                  <img src={artisanimage} />
                 </div>
               </div>
 
               <div className="dets">
                 <div className="col-md-9 skillinfo">
-                  <h1>ujujuju</h1>
+                  <h1>Gen Doctor</h1>
                   <div className="d-flex align-items-center mb-4">
                     <Rating
                       // name={rating}
@@ -63,7 +51,7 @@ const Details = () => {
 
                   <div className="pricesec d-flex align-items-center mb-3">
                     <p className="pricelarge">
-                      ₦10,000 - ₦15,000 <span>(per hour)</span>
+                    ₦15,000 <span>(per hour)</span><span> slightly negotiable</span>
                     </p>
                   </div>
                   <div className="contact-artisan">
