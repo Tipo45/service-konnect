@@ -1,6 +1,7 @@
 import { Rating } from "@mui/material";
 import "../../components/Skillorproducts/Art.css";
 import { Link } from "react-router-dom";
+import artisanartimage from "../../assets/images/image10.webp";
 
 const Art = () => {
   return (
@@ -11,7 +12,7 @@ const Art = () => {
           <section className="container">
             <div className="arts-content">
               <div className="art-category">
-                <img src="" alt="" />
+                <img src={artisanartimage} alt="artisan 1 art" loading="lazy" />
                 <div className="arts-content-content">
                   <div className="price">
                     <p>₦10,000</p>

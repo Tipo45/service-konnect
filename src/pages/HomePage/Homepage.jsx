@@ -15,7 +15,7 @@ const Homepage = () => {
         <div>
           <Carousel>
             <Carousel.Item>
-              <img src={slider1} alt="slider1" className="slider-image" />
+              <img src={slider1} alt="slider1" className="slider-image" loading="lazy" />
               <Carousel.Caption>
                 <h4 className="no-deco">Best of the Best</h4>
                 <p>Get connected with skilled craftsmen</p>
@@ -25,7 +25,7 @@ const Homepage = () => {
               <img
                 src={slider2}
                 alt="slider2"
-                className="slider-image"
+                className="slider-image" loading="lazy"
               />
               <Carousel.Caption>
                 <h4 className="no-deco">Our Services are top notch</h4>
@@ -36,7 +36,7 @@ const Homepage = () => {
               <img
                 src={slider3}
                 alt="slider3"
-                className="slider-image"
+                className="slider-image" loading="lazy"
               />
               <Carousel.Caption>
                 <h4 className="no-deco">Register to get started</h4>

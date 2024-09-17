@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "../../components/Skillorproducts/Art.css";
 import { Rating } from "@mui/material";
+import tailorimage from "../../assets/images/image3.webp";
 
 const Tailors = () => {
   return (
@@ -11,7 +12,7 @@ const Tailors = () => {
           <section className="container">
             <div className="arts-content">
               <div className="art-category">
-                <img src="" alt="" />
+                <img src={tailorimage} alt="tailor 1 image" loading="lazy" />
                 <div className="arts-content-content">
                   <div className="price">
                     <p>₦10,000</p>

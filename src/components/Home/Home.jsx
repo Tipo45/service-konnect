@@ -19,7 +19,7 @@ const Home = () => {
             <div className="steps-container-content">
               <Link to="/productsandservices/tailors">
                 <div className="category">
-                  <img src={tailorimage} alt="Tailoring Service" />
+                  <img src={tailorimage} alt="Tailoring Service" loading="lazy" />
                   <div className="main-category-content">
                     <div className="category-text">
                       <h3>Tailoring Services</h3>
@@ -30,7 +30,7 @@ const Home = () => {
 
               <Link to="/productsandservices/autotechnicians">
                 <div className="category">
-                  <img src={autorepairimage} alt="Auto repair" />
+                  <img src={autorepairimage} alt="Auto repair" loading="lazy" />
                   <div className="main-category-content">
                     <div className="category-text">
                       <h3>Auto Repair Services</h3>
@@ -43,7 +43,7 @@ const Home = () => {
                 <div className="category">
                   <img
                     src={electricalimage}
-                    alt="Electrical Service"
+                    alt="Electrical Service" loading="lazy"
                   />
                   <div className="main-category">
                     <div className="category-text">
@@ -55,7 +55,7 @@ const Home = () => {
 
               <Link to="/productsandservices/plumbers">
                 <div className="category">
-                  <img src={plumberimage} alt="Plumbing Service" />
+                  <img src={plumberimage} alt="Plumbing Service" loading="lazy" />
                   <div className="main-category">
                     <div className="category-text">
                       <h3>Plumbing Services</h3>
@@ -66,7 +66,7 @@ const Home = () => {
 
               <Link to="/productsandservices/caterers">
                 <div className="category">
-                  <img src={caterersimage} alt="Caterers" />
+                  <img src={caterersimage} alt="Caterers" loading="lazy" />
                   <div className="category-rows">
                     <div className="category-text">
                       <h3>Catering Services</h3>
@@ -77,7 +77,7 @@ const Home = () => {
 
               <Link to="/productsandservices/buildersandconstructors">
                 <div className="category">
-                  <img src={buildingandconstructionimage} alt="Building and Construction" />
+                  <img src={buildingandconstructionimage} alt="Building and Construction" loading="lazy" />
                   <div className="category-rows">
                     <div className="category-text">
                       <h3>Building and Construction</h3>
@@ -88,7 +88,7 @@ const Home = () => {
 
               <Link to="/productsandservices/arts">
                 <div className="category">
-                  <img src={Artsimage} alt="Arts Category" />
+                  <img src={Artsimage} alt="Arts Category" loading="lazy" />
                   <div className="category-rows">
                     <div className="category-text">
                       <h3>Arts</h3>
@@ -99,7 +99,7 @@ const Home = () => {
 
               <Link to="/productsandservices/otherservices">
                 <div className="category">
-                  <img src={Othercategoriesimage} alt="Other Categories" />
+                  <img src={Othercategoriesimage} alt="Other Categories" loading="lazy" />
                   <div className="category-rows">
                     <div className="category-text">
                       <h3>Other Categories</h3>

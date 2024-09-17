@@ -32,7 +32,7 @@ const Details = () => {
             <div className="row rows">
               <div className="col-md-11 d-flex align-items-center">
                 <div className="skillimage">
-                  <img src={artisanimage} />
+                  <img src={artisanimage} alt="artisan image" loading="lazy" />
                 </div>
               </div>
 
