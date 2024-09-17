@@ -99,9 +99,8 @@ export async function login_artisan(username, password) {
 
 export async function checkAuth() {
   if (pb.authStore.isValid) {
-    const user = pb.authStore.model; // Retrieve the logged-in user model
+    const user = pb.authStore.model; 
 
-    // Check if the user is either artisan or client
     if (user.artisan) {
       return { isAuthenticated: true, role: "artisan" };
     } else if (user.client) {

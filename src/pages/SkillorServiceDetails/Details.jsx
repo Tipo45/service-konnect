@@ -51,7 +51,7 @@ const Details = () => {
 
                   <div className="pricesec d-flex align-items-center mb-3">
                     <p className="pricelarge">
-                    ₦15,000 <span>(per hour)</span><span> slightly negotiable</span>
+                    ₦15,000 <span>(per hour)</span><span><i>slightly negotiable</i></span>
                     </p>
                   </div>
                   <div className="contact-artisan">
