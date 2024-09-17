@@ -3,13 +3,12 @@ import { Link } from "react-router-dom";
 import "../GeneralComponents/GeneralComponent.css";
 import { FaBars } from "react-icons/fa6";
 import { FaInstagram, FaTimes, FaTwitter, FaWhatsapp } from "react-icons/fa";
-import { checkAuth, getCurrentUser } from "../../lib/pocketbase";
+import { checkAuth } from "../../lib/pocketbase";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userRole, setUserRole] = useState(null);
-
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -17,12 +16,10 @@ const Navbar = () => {
 
   useEffect(() => {
     const checkUserStatus = async () => {
-      const isAuthenticated = checkAuth();
-      setIsLoggedIn(isAuthenticated);
-
-      if(isAuthenticated) {
-        const user = await getCurrentUser();
-        setUserRole(user.artisan)
+      const authStatus = await checkAuth();
+      setIsLoggedIn(authStatus.isAuthenticated);
+      if (authStatus.isAuthenticated) {
+        setUserRole(authStatus.role);
       }
     };
 
@@ -33,10 +30,10 @@ const Navbar = () => {
     if (userRole === "artisan") {
       return "/artisan/accountinformation";
     } else {
-      return "/client/accountinformation"
+      return "/client/accountinformation";
     }
   };
-  
+
   return (
     <>
       <header>
@@ -47,49 +44,50 @@ const Navbar = () => {
                 <h2 className="main-logo">Service Konnect</h2>
               </Link>
             </div>
-           <div className="side">
-           <ul className={isOpen ? "nav-link active" : "nav-link"}>
-              <li>
-                <Link className="nodeco" to="/">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link className="nodeco" to="/about">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link className="nodeco" to="/productsandservices/tailors">
-                  Skills
-                </Link>
-              </li>
-              <li>
-               {isLoggedIn ?(<Link className="nodeco" to={getAccountPage()}>
-                  My account
-                </Link>) : (<Link className="nodeco" to="/login">
-                  Login
-                </Link>)}
-              </li>
+            <div className="side">
+              <ul className={isOpen ? "nav-link active" : "nav-link"}>
+                <li>
+                  <Link className="nodeco" to="/">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link className="nodeco" to="/about">
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link className="nodeco" to="/productsandservices/tailors">
+                    Skills
+                  </Link>
+                </li>
+                <li>
+                  {isLoggedIn ? (
+                    <Link className="nodeco" to={getAccountPage()}>
+                      My account
+                    </Link>
+                  ) : (
+                    <Link className="nodeco" to="/login">
+                      Login
+                    </Link>
+                  )}
+                </li>
 
-              
-
-              <div className="sidebar">
-                <div className="social-links">
-                  <Link to="#" target="_blank">
-                    <FaWhatsapp />
-                  </Link>
-                  <Link to="#" target="_blank">
-                    <FaTwitter />
-                  </Link>
-                  <Link to="#" target="_blank">
-                    <FaInstagram />
-                  </Link>
+                <div className="sidebar">
+                  <div className="social-links">
+                    <Link to="#" target="_blank">
+                      <FaWhatsapp />
+                    </Link>
+                    <Link to="#" target="_blank">
+                      <FaTwitter />
+                    </Link>
+                    <Link to="#" target="_blank">
+                      <FaInstagram />
+                    </Link>
+                  </div>
                 </div>
-              </div>
-              
-            </ul>
-           </div>
+              </ul>
+            </div>
 
             <div className="icon" onClick={toggleMenu}>
               {isOpen ? <FaTimes /> : <FaBars />}

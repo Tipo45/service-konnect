@@ -8,10 +8,8 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { reviews } from "../../lib/pocketbase";
 import { useUserData } from "../../hooks/useUserDate";
-import { useArtisanData } from "../../hooks/useArtisanData";
 
 const Details = () => {
-  const {datas} =useArtisanData()
   const {data } = useUserData()
   const [rate, setRate] = useState(0);
   const [review, setReview] = useState("");
@@ -52,7 +50,7 @@ const Details = () => {
 
               <div className="dets">
                 <div className="col-md-9 skillinfo">
-                  <h1>{datas?.name_of_business}</h1>
+                  <h1>ujujuju</h1>
                   <div className="d-flex align-items-center mb-4">
                     <Rating
                       // name={rating}

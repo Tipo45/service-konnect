@@ -85,7 +85,7 @@ const UserSidebar = ({ activepage }) => {
       {
         
           <div className="s1">
-            <button onClick={() => {logout() ,navigate("/login") }} className="text-dark btns">
+            <button onClick={() => {logout() ,navigate("/") }} className="text-dark btns">
             <IoPower className="text-danger" /> Logout</button>
           </div>
       }

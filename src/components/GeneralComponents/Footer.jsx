@@ -9,7 +9,7 @@ import PersonPinIcon from '@mui/icons-material/PersonPin';
 import HomeIcon from "@mui/icons-material/Home";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import { useEffect, useState } from "react";
-import { checkAuth, getCurrentUser } from "../../lib/pocketbase";
+import { checkAuth } from "../../lib/pocketbase";
 
 const Footer = () => {
   const [value, setValue] = useState(0);
@@ -19,12 +19,10 @@ const Footer = () => {
 
   useEffect(() => {
     const checkUserStatus = async () => {
-      const isAuthenticated = checkAuth();
-      setIsLoggedIn(isAuthenticated);
-
-      if(isAuthenticated) {
-        const user = await getCurrentUser();
-        setUserRole(user.artisan)
+      const authStatus = await checkAuth();
+      setIsLoggedIn(authStatus.isAuthenticated);
+      if (authStatus.isAuthenticated) {
+        setUserRole(authStatus.role);
       }
     };
 
@@ -35,7 +33,7 @@ const Footer = () => {
     if (userRole === "artisan") {
       return "/artisan/accountinformation";
     } else {
-      return "/client/accountinformation"
+      return "/client/accountinformation";
     }
   };
 

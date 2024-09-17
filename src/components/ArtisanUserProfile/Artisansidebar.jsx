@@ -83,7 +83,7 @@ const Artisansidebar = ({ activepage }) => {
       )}
 
         <div className="s3">
-          <button onClick={() => {logout(),navigate("/artisanlogin") }}  className="text-dark btns"><IoPower className="text-danger" /> Logout</button>
+          <button onClick={() => {logout(),navigate("/") }}  className="text-dark btns"><IoPower className="text-danger" /> Logout</button>
         </div>
     
     </div>

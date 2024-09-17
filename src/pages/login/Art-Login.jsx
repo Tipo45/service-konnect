@@ -77,7 +77,6 @@ const ArtisanLogin = () => {
                   placeholder="Username"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
-                  maxLength="16"
                 />
                 {usernameError && <div className="error-message">{usernameError}</div>}
               </div>
@@ -89,7 +88,6 @@ const ArtisanLogin = () => {
                   placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  minLength="8"
                 />
                 {passwordError && <div className="error-message">{passwordError}</div>}
               </div>
