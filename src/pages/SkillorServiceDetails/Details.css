@@ -48,6 +48,10 @@
   border-radius: 5px;
 }
 
+.prev-1 span svg {
+  color: gold;
+}
+
 @media (min-width: 375px) {
   .skillimage img {
     width: 360px !important;
@@ -56,7 +60,7 @@
 }
 
 @media (min-width: 425px) {
-  .skillimage img{
+  .skillimage img {
     width: 400px !important;
     height: 300px;
   }
@@ -110,6 +114,15 @@
   }
 
   .comments-section textarea {
+    font-size: 1.2rem;
+  }
+
+  .part2 {
+    margin-top: 490px;
+  }
+  .prev-1 span,
+  .prev-1 span svg,
+  .prev-1 p {
     font-size: 1.2rem;
   }
 }
@@ -206,6 +219,23 @@
   .comments-section textarea {
     font-size: 1.5rem;
   }
+
+  .part2 {
+    margin-top: 500px;
+  }
+
+  .prev-1 h5 {
+    font-size: 1.5rem;
+  }
+
+  .prev-1 span,
+  .prev-1 span svg {
+    font-size: 1.3rem !important;
+  }
+
+  .prev-1 p {
+    font-size: 1rem !important;
+  }
 }
 
 @media (min-width: 1440px) {
@@ -252,5 +282,22 @@
 
   .comments-section textarea {
     font-size: 1.9rem;
+  }
+
+  .part2 {
+    margin-top: 560px;
+  }
+
+  .prev-1 h5 {
+    font-size: 1.6rem;
+  }
+
+  .prev-1 span,
+  .prev-1 span svg {
+    font-size: 1.4rem !important;
+  }
+
+  .prev-1 p {
+    font-size: 1.1rem !important;
   }
 }

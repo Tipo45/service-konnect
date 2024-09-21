@@ -113,7 +113,7 @@ export async function checkAuth() {
 
 
 export async function reviews(review, rate) {
-  const userid = pb.authStore.model.id;
+  const userid = pb.authStore.model?.id;
   const data = {
     review: review,
     rate: rate,

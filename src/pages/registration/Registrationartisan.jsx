@@ -10,7 +10,7 @@ const Registrationartisan = () => {
     <>
     <div className="directions">
         <span>
-          <Link to="/clientregistration">
+          <Link to="/artisanlogin">
             <FaArrowLeft />
           </Link>
         </span>

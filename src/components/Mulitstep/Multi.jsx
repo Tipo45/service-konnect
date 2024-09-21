@@ -165,6 +165,9 @@ export default function Multi() {
 
   return (
     <>
+    {loading ? (
+              <h4>Loading, please wait...</h4>
+            ) : (
       <div className="wraps">
         <form onSubmit={(e) => handleSubmit(e)}>
           <div className="progress_wrap">
@@ -178,9 +181,7 @@ export default function Multi() {
             <div className={`${step >= 3 ? "circle active" : "circle"}`}>3</div>
           </div>
           <div className="contents">
-            {loading ? (
-              <h4>Loading, please wait...</h4>
-            ) : (
+            
               <div>
                 {step === 1 && (
                   <div className="containers second-form">
@@ -405,10 +406,10 @@ export default function Multi() {
                   </div>
                 )}
               </div>
-            )}
+            
           </div>
           <div className="buttns">
-            <button
+            <button type="button"
               className={`${step <= 1 ? "disabled" : "btn-s"}`}
               onClick={handlePrev}
             >
@@ -427,6 +428,7 @@ export default function Multi() {
           </div>
         </form>
       </div>
+    )}
     </>
   );
 }

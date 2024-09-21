@@ -15,30 +15,29 @@ const Artisandetailsfooter = () => {
         <div className="container-fluid">
           <BottomNavigation
             className="bottom-nav"
-            showLabels
+            
             value={value}
             onChange={(event, newValue) => {
               setValue(newValue);
             }}
           >
-            <Link to="/">
-              <BottomNavigationAction label="Home" icon={<HomeIcon />} />
-            </Link>
-            <Link to="/productsandservices/tailors">
-              <BottomNavigationAction label="Home" icon={<FormatListBulletedIcon />} />
-            </Link>
-            <Link to="tel: 0813 585 4955">
+            
+              <BottomNavigationAction label="Home" icon={<HomeIcon />} component={Link} to="/" />
+            
+            
+              <BottomNavigationAction label="Menu" icon={<FormatListBulletedIcon />} component={Link} to="/productsandservices/tailors"  />
+           
+            
               <BottomNavigationAction
                 label="Call"
-                icon={<CallIcon />}
+                icon={<CallIcon />} component={Link} to="tel: 0813 585 4955"
               />
-            </Link>
-            <Link to="https://wa.me/2348135854955">
+            
+            
               <BottomNavigationAction
                 label="Whatsapp"
-                icon={<WhatsAppIcon />}
+                icon={<WhatsAppIcon />} component={Link} to="https://wa.me/2348135854955"
               />
-            </Link>
           </BottomNavigation>
         </div>
       </div>

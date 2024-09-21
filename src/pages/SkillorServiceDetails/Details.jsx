@@ -8,21 +8,22 @@ import { useState } from "react";
 import { reviews } from "../../lib/pocketbase";
 import { useUserData } from "../../hooks/useUserDate";
 // import { useArtisanData } from "../../hooks/useArtisanData";
-import artisanimage from "../../assets/images/image10.webp"
+import artisanimage from "../../assets/images/image10.webp";
+import { FaStar } from "react-icons/fa6";
 
 const Details = () => {
   // const {info} =useArtisanData()
-  const {data} = useUserData()
+  const { data } = useUserData();
   const [rate, setRate] = useState(0);
   const [review, setReview] = useState("");
 
-  async function handleSubmit(e){
-    if(data !== undefined){
+  async function handleSubmit(e) {
+    if (data !== undefined) {
       e.preventDefault();
       reviews(review, rate);
     }
     window.location.reload();
-  };
+  }
   return (
     <>
       <Navbar />
@@ -51,7 +52,10 @@ const Details = () => {
 
                   <div className="pricesec d-flex align-items-center mb-3">
                     <p className="pricelarge">
-                    ₦15,000 <span>(per hour)</span><span><i>slightly negotiable</i></span>
+                      ₦15,000 <span>(per hour)</span>
+                      <span>
+                        <i>slightly negotiable</i>
+                      </span>
                     </p>
                   </div>
                   <div className="contact-artisan">
@@ -111,7 +115,39 @@ const Details = () => {
             </div>
           </div>
 
-          <div className="col-md-3 part2"></div>
+          <div className="col-md-3 part2">
+            
+              
+
+            <div className="prev-rating-and-comment">
+              <div className="prev-1">
+                <h5>Username</h5>
+                <span>5 <FaStar /></span>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
+                  reiciendis, labore enim qui saepe pariatur, dicta impedit
+                </p>
+              </div>
+
+              <div className="prev-1">
+                <h5>Username</h5>
+                <span>2 <FaStar /></span>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
+                  reiciendis, labore enim qui saepe pariatur, dicta impedit
+                </p>
+              </div>
+
+              <div className="prev-1">
+                <h5>Username</h5>
+                <span>4 <FaStar /></span>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
+                  reiciendis, labore enim qui saepe pariatur, dicta impedit
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <Artisandetailsfooter />

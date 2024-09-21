@@ -131,28 +131,21 @@ const Footer = () => {
           <BottomNavigation
             className="bottom-nav"
             value={value}
+            
             onChange={(event, newValue) => {
               setValue(newValue);
             }}
           >
-            <Link to="/">
-              <BottomNavigationAction label="Home" icon={<HomeIcon />} />
-            </Link>
-            <Link to="/productsandservices/tailors">
-              <BottomNavigationAction
-                label="Menu"
-                icon={<FormatListBulletedIcon />}
-              />
-            </Link>
-            {isLoggedIn ? (<Link to={getAccountPage()}>
-              <BottomNavigationAction
-                label="Account"
-                icon={<PersonPinIcon />}
-              /></Link>) : (<Link to="/login"> <BottomNavigationAction
-                label="Account"
-                icon={<AccountCircleIcon />}
-              />
-            </Link>)}
+            
+              <BottomNavigationAction label="Home" icon={<HomeIcon />} component={Link} to="/" />
+            
+             
+              <BottomNavigationAction  label="Menu" icon={<FormatListBulletedIcon />} component={Link} to="/productsandservices/tailors" />
+            
+            {isLoggedIn ? (
+              <BottomNavigationAction  label="My Account"  icon={<PersonPinIcon />} component={Link} to={getAccountPage()}
+                />) : ( <BottomNavigationAction  label="Login"  icon={<AccountCircleIcon />} component={Link} to="/login" />
+            )}
           </BottomNavigation>
         </div>
       </div>
