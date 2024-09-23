@@ -23,6 +23,8 @@ export default function Multi() {
   const [confirmPasswordError, setConfirmPasswordError] = useState("");
   const [description, setDesription] = useState("");
   const [address, setAddress] = useState("");
+  const category = useState("");
+  const [error, setError] = useState("");
   const [descriptionError, setDescriptionError] = useState("");
   const [addressError, setAddressError] = useState("");
   const [phonenumber, setPhoneNumber] = useState("");
@@ -34,6 +36,8 @@ export default function Multi() {
   const [nameofartisanError, setNameOfArtisanError] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  
 
   const handleNext = async (e) => {
     e.preventDefault();
@@ -92,6 +96,13 @@ export default function Multi() {
     setSteps(2);
 
     if (step === 2) {
+      if (!selected) {
+        setError("please select a category");
+        return
+      } else {
+        setError("");
+      }
+
       if (description === "") {
         setDescriptionError("required");
         return;
@@ -140,7 +151,8 @@ export default function Multi() {
           phonenumber,
           additionalphonenumber,
           whatsappnumber,
-          instahandle
+          instahandle,
+          category
         );
         final_result = result;
       } catch (error) {
@@ -187,6 +199,8 @@ export default function Multi() {
                   <div className="containers second-form">
                     <h1 className="header">Artisan Registration</h1>
                     <h3>Personal Information</h3>
+
+                    <input type="file" onChange={(e) => setFile(e.target.files[0])} />
 
                     <div className="artisan-names">
                       <div className="a-input_box">
@@ -296,6 +310,7 @@ export default function Multi() {
                         Select Category <span className="text-danger">*</span>
                       </h4>
                       <Dropdown selected={selected} setSelected={setSelected} />
+                      {error.length === 0 ? null : (<div className="error-message">{error}</div>)}
                     </div>
 
                     <div className="artisan-description">
@@ -304,7 +319,6 @@ export default function Multi() {
                       </h4>
                       <textarea
                         placeholder="Describe what you do"
-                        required
                         value={description}
                         onChange={(e) => setDesription(e.target.value)}
                       ></textarea>

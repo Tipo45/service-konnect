@@ -73,7 +73,6 @@ const Payment = () => {
 
         <div className="pay">
           <PaystackButton className="btn" {...componentProps} />
-          {/* <button className="btn">Pay</button> */}
         </div>
       </div>
       <Footer />

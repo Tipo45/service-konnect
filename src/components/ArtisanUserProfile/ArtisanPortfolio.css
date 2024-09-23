@@ -1,16 +1,16 @@
-.artisanportfolio{
+.artisanaccsettings{
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
 }
 
-.artisanportfolio h1{
+.artisanaccsettings h1{
     padding: 10px 20px;
 }
 
 
-.artisanportfolio .form{
+.artisanaccsettings .form{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -19,20 +19,20 @@
     padding: 10px 20px;
 }
 
-.artisanportfolio .form .form-group{
+.artisanaccsettings .form .form-group{
     display: flex;
     flex-direction: column;
     width: 45%;
     margin: 10px;
 }
 
-.artisanportfolio .form .form-group label{
+.artisanaccsettings .form .form-group label{
     font-size: 1.2rem;
     font-weight: 300;
     margin-bottom: 5px;
 }
 
-.artisanportfolio .form .form-group input{
+.artisanaccsettings .form .form-group input{
     padding: 10px 20px;
     border: 1px solid rgb(207, 207, 207);
     border-radius: 5px;
@@ -81,7 +81,7 @@
 
   @media (max-width: 550px){
 
-    .artisanportfolio .form{
+    .artisanaccsettings .form{
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -90,18 +90,18 @@
         padding: 10px 20px;
     }
 
-    .artisanportfolio .form .form-group{
+    .artisanaccsettings .form .form-group{
         display: flex;
         flex-direction: column;
         width: 97%;
         margin: 10px;
     }
 
-    .artisanportfolio h1{
+    .artisanaccsettings h1{
         font-size: 20px;
     }
 
-    .artisanportfolio .form .form-group label{
+    .artisanaccsettings .form .form-group label{
         font-size: 16px;
         font-weight: 300;
         margin-bottom: 5px;

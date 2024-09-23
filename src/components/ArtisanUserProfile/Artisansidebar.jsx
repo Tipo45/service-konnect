@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { GrUserSettings } from "react-icons/gr";
 import { IoEyeOutline, IoPower } from "react-icons/io5";
 import { CiLocationOn } from "react-icons/ci";
-import { BiDetail } from "react-icons/bi";
 import { FaRegUser } from "react-icons/fa";
 import { logout } from "../../lib/pocketbase";
 
@@ -26,20 +25,6 @@ const Artisansidebar = ({ activepage }) => {
         </Link>
       )}
 
-      {activepage === "artisanaccountsettings" ? (
-        <div className="s4">
-          <GrUserSettings />
-          <span>Account Settings</span>
-        </div>
-      ) : (
-        <Link to="/artisan/artisanaccountsettings" className="nodeco">
-          <div className="s3">
-            <GrUserSettings className="text-info" />
-            <span className="text-dark">Account Settings</span>
-          </div>
-        </Link>
-      )}
-
       {activepage === "artisanchangepassword" ? (
         <div className="s4">
           <IoEyeOutline />
@@ -56,14 +41,14 @@ const Artisansidebar = ({ activepage }) => {
 
       {activepage === "artisanportfolio" ? (
         <div className="s4">
-          <BiDetail />
-          <span>My Portfolio</span>
+          <GrUserSettings />
+          <span>Account Settings</span>
         </div>
       ) : (
-        <Link to="/artisan/artisanportfolio" className="nodeco">
+        <Link to="/artisan/artisanaccountsettings" className="nodeco">
           <div className="s3">
-            <BiDetail className="text-primary" />
-            <span className="text-dark">My Portfolio</span>
+            <GrUserSettings className="text-info" />
+            <span className="text-dark">Account Settings</span>
           </div>
         </Link>
       )}

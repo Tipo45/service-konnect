@@ -22,10 +22,10 @@ const Artisandetailsfooter = () => {
             }}
           >
             
-              <BottomNavigationAction label="Home" icon={<HomeIcon />} component={Link} to="/" />
+              <BottomNavigationAction label="Home" icon={<HomeIcon />} component={Link} to="/" replace />
             
             
-              <BottomNavigationAction label="Menu" icon={<FormatListBulletedIcon />} component={Link} to="/productsandservices/tailors"  />
+              <BottomNavigationAction label="Menu" icon={<FormatListBulletedIcon />} component={Link} to="/productsandservices/tailors" replace  />
            
             
               <BottomNavigationAction

@@ -25,8 +25,8 @@ const Artisanaccinfo = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <div className="displayed"></div>
+          <label htmlFor="category">Category</label>
+          <div className="displayed">{data?.category}</div>
         </div>
 
         <div className="form-group">

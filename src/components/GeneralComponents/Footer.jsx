@@ -137,13 +137,13 @@ const Footer = () => {
             }}
           >
             
-              <BottomNavigationAction label="Home" icon={<HomeIcon />} component={Link} to="/" />
+              <BottomNavigationAction label="Home" icon={<HomeIcon />} component={Link} to="/" replace />
             
              
-              <BottomNavigationAction  label="Menu" icon={<FormatListBulletedIcon />} component={Link} to="/productsandservices/tailors" />
+              <BottomNavigationAction  label="Menu" icon={<FormatListBulletedIcon />} component={Link} to="/productsandservices/tailors" replace />
             
             {isLoggedIn ? (
-              <BottomNavigationAction  label="My Account"  icon={<PersonPinIcon />} component={Link} to={getAccountPage()}
+              <BottomNavigationAction  label="My Account"  icon={<PersonPinIcon />} component={Link} to={getAccountPage()} replace
                 />) : ( <BottomNavigationAction  label="Login"  icon={<AccountCircleIcon />} component={Link} to="/login" />
             )}
           </BottomNavigation>

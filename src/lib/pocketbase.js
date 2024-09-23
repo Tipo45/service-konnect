@@ -59,7 +59,8 @@ export async function create_artisan(
   phonenumber,
   additionalphonenumber,
   whatsappnumber,
-  instahandle
+  instahandle,
+  category
 ) {
   const data = {
     "username": username,
@@ -75,6 +76,7 @@ export async function create_artisan(
     "whatsapp_number": whatsappnumber,
     "insta_handle": instahandle,
     "artisan": true,
+    "category": category
   };
 
   await pb.collection("artisan").create(data);
@@ -113,7 +115,7 @@ export async function checkAuth() {
 
 
 export async function reviews(review, rate) {
-  const userid = pb.authStore.model?.id;
+  const userid = pb.authStore.model.id;
   const data = {
     review: review,
     rate: rate,
@@ -121,5 +123,41 @@ export async function reviews(review, rate) {
   };
 
   const record = await pb.collection("review").create(data);
+  return record;
+}
+
+export async function update_artisan(
+  username,
+  password,
+  confirmpassword,
+  firstname,
+  lastname,
+  description,
+  address,
+  nameofartisan,
+  phonenumber,
+  additionalphonenumber,
+  whatsappnumber,
+  instahandle,
+  category
+) {
+  const data = {
+    "username": username,
+    "password": password,
+    "passwordConfirm": confirmpassword,
+    "first_name": firstname,
+    "last_name": lastname,
+    "description": description,
+    "address": address,
+    "name_of_business": nameofartisan,
+    "phone_number": phonenumber,
+    "additional_phone_number": additionalphonenumber,
+    "whatsapp_number": whatsappnumber,
+    "insta_handle": instahandle,
+    "artisan": true,
+    "category": category
+  };
+  const id = pb.authStore.model.id;
+  const record = await pb.collection('artisan').update(id, data);
   return record;
 }
