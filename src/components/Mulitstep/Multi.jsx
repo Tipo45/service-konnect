@@ -200,8 +200,6 @@ export default function Multi() {
                     <h1 className="header">Artisan Registration</h1>
                     <h3>Personal Information</h3>
 
-                    <input type="file" onChange={(e) => setFile(e.target.files[0])} />
-
                     <div className="artisan-names">
                       <div className="a-input_box">
                         <MdDriveFileRenameOutline className="a-input-icon" />

@@ -133,16 +133,6 @@ const Artisanportfolio = () => {
 
               <div className="form">
 
-              <div className='form-group'>
-                            <label htmlFor='name'>First Name <span className="text-danger">*</span></label>
-                            <input type='text' maxLength="15" />
-                        </div>
-
-                        <div className='form-group'>
-                            <label htmlFor='name'>Last Name <span className="text-danger">*</span></label>
-                            <input type='text' maxLength="15" />
-                        </div>
-
                 <div className="form-group">
                   <label htmlFor="name">
                     Name of Business <span className="text-danger">*</span>

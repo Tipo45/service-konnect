@@ -127,11 +127,7 @@ export async function reviews(review, rate) {
 }
 
 export async function update_artisan(
-  username,
-  password,
-  confirmpassword,
-  firstname,
-  lastname,
+  
   description,
   address,
   nameofartisan,
@@ -139,14 +135,11 @@ export async function update_artisan(
   additionalphonenumber,
   whatsappnumber,
   instahandle,
-  category
+  category,
+  sellersimage
 ) {
   const data = {
-    "username": username,
-    "password": password,
-    "passwordConfirm": confirmpassword,
-    "first_name": firstname,
-    "last_name": lastname,
+    
     "description": description,
     "address": address,
     "name_of_business": nameofartisan,
@@ -155,9 +148,28 @@ export async function update_artisan(
     "whatsapp_number": whatsappnumber,
     "insta_handle": instahandle,
     "artisan": true,
-    "category": category
+    "category": category,
   };
   const id = pb.authStore.model.id;
+  const formData = new FormData();
+
+  
+  formData.append("description", description);
+  formData.append("address", address);
+  formData.append("name_of_business", nameofartisan);
+  formData.append("phone_number", phonenumber);
+  formData.append("additional_phone_number", additionalphonenumber);
+  formData.append("whatsapp_number", whatsappnumber);
+  formData.append("insta_handle", instahandle);
+  formData.append("artisan", true);
+  formData.append("category", category);
+
+  if (sellersimage && sellersimage.length > 0) {
+    for (let i = 0; i < sellersimage.length; i++) {
+      formData.append("images", sellersimage[i]); // 'images' is the field name in the Pocketbase collection
+    }
+  }
+
   const record = await pb.collection('artisan').update(id, data);
   return record;
 }
