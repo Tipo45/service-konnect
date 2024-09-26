@@ -7,12 +7,12 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { reviews } from "../../lib/pocketbase";
 import { useUserData } from "../../hooks/useUserDate";
-// import { useArtisanData } from "../../hooks/useArtisanData";
 import artisanimage from "../../assets/images/image10.webp";
 import { FaStar } from "react-icons/fa6";
+import { useArtisanDetails } from "../../hooks/useArtisanDetails";
 
 const Details = () => {
-  // const {info} =useArtisanData()
+  const { info } =useArtisanDetails
   const { data } = useUserData();
   const [rate, setRate] = useState(0);
   const [review, setReview] = useState("");
@@ -121,11 +121,10 @@ const Details = () => {
 
             <div className="prev-rating-and-comment">
               <div className="prev-1">
-                <h5>Username</h5>
-                <span>5 <FaStar /></span>
+                <h5>{info?.user}tipo 45</h5>
+                <span>{info?.rate}4 <FaStar /></span>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto
-                  reiciendis, labore enim qui saepe pariatur, dicta impedit
+                   they are ok oo
                 </p>
               </div>
 

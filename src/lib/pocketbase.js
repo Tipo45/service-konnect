@@ -92,6 +92,8 @@ export async function artisan_info() {
   return record;
 }
 
+
+
 export async function login_artisan(username, password) {
   const record = await pb
     .collection("artisan")
@@ -122,7 +124,16 @@ export async function reviews(review, rate) {
     user: userid,
   };
 
+  
   const record = await pb.collection("review").create(data);
+  return record;
+}
+
+export async function rate_and_comments() {
+  const id = pb.authStore.model.id;
+  const record = await pb.collection("review").getOne(id, {
+    expand: 'relField1,relField2.subRelField',
+});
   return record;
 }
 
